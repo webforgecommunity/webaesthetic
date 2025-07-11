@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Code, Palette, Zap, CheckCircle, Star, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -50,29 +51,15 @@ export default function Home() {
                 <div className="relative w-full max-w-xs sm:max-w-sm mx-auto">
                   {/* Main Image Container */}
                   <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl transform hover:scale-105 transition-all duration-300 animate-float">
-                    <div className="aspect-square bg-gradient-to-br from-blue-200 to-purple-200 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                      <div className="text-center space-y-2 sm:space-y-3 p-3 sm:p-4">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mx-auto flex items-center justify-center">
-                          <Code className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                        </div>
-                        <div className="space-y-1 sm:space-y-2">
-                          <h3 className="text-sm sm:text-base font-bold text-gray-800">
-                            Professional Developer Team
-                          </h3>
-                          <p className="text-xs text-gray-600 leading-relaxed">
-                            Confident development team collaborating on innovative projects
-                          </p>
-                        </div>
-                        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 sm:p-3 text-xs text-gray-500">
-                          <p className="font-semibold mb-1">Suggested Image:</p>
-                          <p className="text-xs leading-tight">
-                            • Modern development team (3-4 people)<br />
-                            • Working on laptops with code on screens<br />
-                            • Clean, bright office environment<br />
-                            • Diverse, professional, collaborative
-                          </p>
-                        </div>
-                      </div>
+                    <div className="aspect-square bg-gradient-to-br from-blue-200 to-purple-200 rounded-xl sm:rounded-2xl flex items-center justify-center overflow-hidden">
+                      <Image 
+                        src="/team-image.png" 
+                        alt="Professional development team collaborating on innovative projects"
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+                        priority
+                      />
                     </div>
                   </div>
 
