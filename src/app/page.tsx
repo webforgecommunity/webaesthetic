@@ -24,7 +24,7 @@ export default function Home() {
           <div className="absolute bottom-10 sm:bottom-20 left-1/2 w-56 sm:w-72 md:w-80 h-56 sm:h-72 md:h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse delay-2000"></div>
         </div>
 
-        <div className="container mx-auto px-0.5 sm:px-1 lg:px-1.5 relative z-10">
+        <div className="container mx-auto px-4 sm:px-4 lg:px-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[500px] sm:min-h-[580px] lg:min-h-[620px]">
             {/* Left Content */}
             <div className="space-y-6 sm:space-y-8">
