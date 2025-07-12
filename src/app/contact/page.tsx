@@ -25,7 +25,7 @@ export default function Contact() {
                 Phone: +1-234-567-890
               </p>
               <p className="text-gray-600">
-                We'll get back to you within 24 hours!
+                We&apos;ll get back to you within 24 hours!
               </p>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Code, Palette, Zap } from 'lucide-react'
+import { Palette, Zap } from 'lucide-react'
 
 export default function AnimatedImage() {
   const [mounted, setMounted] = useState(false)

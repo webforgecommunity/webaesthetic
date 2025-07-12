@@ -19,7 +19,7 @@ export default function Services() {
             <div className="bg-gray-50 rounded-lg p-8 text-left">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Coming Soon</h2>
               <p className="text-gray-600">
-                This page is under construction. We're building something amazing here!
+                This page is under construction. We&apos;re building something amazing here!
               </p>
             </div>
           </div>

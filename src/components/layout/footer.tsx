@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Github, Twitter, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react'
+import { Github, Twitter, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -124,7 +124,7 @@ export default function Footer() {
             <div className="flex-1 md:pr-8">
               <h3 className="font-bold text-xl text-gray-900 mb-2">Get Your Project Started</h3>
               <p className="text-gray-600 text-sm max-w-md mb-4">
-                Ready to transform your ideas into stunning web experiences? Let's discuss your project 
+                Ready to transform your ideas into stunning web experiences? Let&apos;s discuss your project 
                 and create something amazing together.
               </p>
               <form className="flex flex-col sm:flex-row gap-3 max-w-md">

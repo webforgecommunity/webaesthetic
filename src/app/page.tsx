@@ -1,8 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Code, Palette, Zap, CheckCircle, Star, Users, Smartphone, Globe, ShoppingCart, Bot, Cloud, Search, Settings, Cpu, Database, Monitor } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ArrowRight, Code, Palette, Zap, CheckCircle, Smartphone, Globe, ShoppingCart, Search, Settings, Database, Monitor } from 'lucide-react'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import AnimatedHero from '@/components/ui/AnimatedHero'
@@ -102,7 +101,7 @@ export default function Home() {
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Webasthetic</span>?
             </h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              We're your strategic partners in digital transformation with expertise that delivers results.
+              We&apos;re your strategic partners in digital transformation with expertise that delivers results.
             </p>
           </div>
           
@@ -225,7 +224,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-purple-200">
                 <div className="relative mb-6">
                   <div className="w-16 h-16 sm:w-18 sm:h-18 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-purple-200 group-hover:to-purple-300 transition-all duration-300">
-                    <Cpu className="h-8 w-8 sm:h-9 sm:w-9 text-purple-600" />
+                    <Zap className="h-8 w-8 sm:h-9 sm:w-9 text-purple-600" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
@@ -965,8 +964,8 @@ export default function Home() {
                   <div className="bg-white rounded-xl p-4 text-center hover:shadow-lg transition-all duration-500 group/tech hover:-translate-y-1">
                     <div className="mb-3 group-hover/tech:scale-110 transition-transform duration-500">
                       <Image 
-                        src="/tech_logos/kubernetes.jpg" 
-                        alt="kubernetes" 
+                        src="/tech_logos/Kubernetes.jpg" 
+                        alt="Kubernetes" 
                         width={40} 
                         height={40} 
                         className="mx-auto rounded-lg object-cover"
@@ -1047,7 +1046,7 @@ export default function Home() {
             </h2>
             <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
               Join 500+ successful businesses who chose Webasthetic. 
-              Let's create something amazing together.
+              Let&apos;s create something amazing together.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

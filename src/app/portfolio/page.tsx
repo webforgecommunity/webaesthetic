@@ -19,7 +19,7 @@ export default function Portfolio() {
             <div className="bg-gray-50 rounded-lg p-8 text-left">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Coming Soon</h2>
               <p className="text-gray-600">
-                We're currently showcasing our best work here. Check back soon to see our amazing projects!
+                We&apos;re currently showcasing our best work here. Check back soon to see our amazing projects!
               </p>
             </div>
           </div>
