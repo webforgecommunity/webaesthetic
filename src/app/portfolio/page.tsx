@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
-import { Monitor, Smartphone, ShoppingCart, Zap, ExternalLink, Github, Calendar, Users, Star, Filter, Grid3X3, ArrowRight, Play, TrendingUp, Database, Bot, Briefcase } from 'lucide-react'
+import { Monitor, Smartphone, ShoppingCart, Zap, ExternalLink, Github, Calendar, Users, Star, Filter, Grid3X3, ArrowRight, Play, TrendingUp, Database, Bot, Briefcase, ChevronDown, X } from 'lucide-react'
 
 // Check if we're in the browser before using GSAP
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -180,6 +180,7 @@ export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [filteredProjects, setFilteredProjects] = useState(projects)
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const [isFilterOpen, setIsFilterOpen] = useState(false)
   
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
   const badgeRefs = useRef<(HTMLSpanElement | null)[][]>([])
@@ -194,6 +195,7 @@ export default function Portfolio() {
   const heroGlowRef = useRef<HTMLDivElement | null>(null)
   const heroHeadlineWords = ["Our", "Portfolio"];
   const heroWordRefs = useRef<(HTMLSpanElement | null)[]>([])
+  const filterDropdownRef = useRef<HTMLDivElement | null>(null)
 
   // Filter projects based on category
   useEffect(() => {
@@ -203,6 +205,23 @@ export default function Portfolio() {
       setFilteredProjects(projects.filter(project => project.category === activeCategory))
     }
   }, [activeCategory])
+
+  // Close filter dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (filterDropdownRef.current && !filterDropdownRef.current.contains(event.target as Node)) {
+        setIsFilterOpen(false)
+      }
+    }
+
+    if (isFilterOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isFilterOpen])
 
   // Mouse-following glow effect
   useEffect(() => {
@@ -534,23 +553,15 @@ export default function Portfolio() {
           <div ref={el => { featuredBgBlobsRef.current[1] = el }} className="absolute bottom-20 right-10 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-2xl opacity-20"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Section Header */}
-          <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
-            <div ref={featuredBlobRef} className="absolute left-1/2 -translate-x-1/2 -top-8 w-60 h-24 bg-gradient-to-r from-blue-300 via-purple-200 to-blue-200 rounded-full blur-2xl opacity-20"></div>
-            <h2 ref={featuredTitleRef} className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
-              Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Work</span>
-            </h2>
-            <p ref={featuredDescRef} className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Discover our most impactful projects across various industries and technologies.
-            </p>
-          </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
 
           {/* Filter Controls */}
           <div className="max-w-6xl mx-auto mb-12">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
-              {/* Category Filters */}
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-8">
+              
+              {/* Desktop Filter Pills - Hidden on mobile/tablet */}
+              <div className="hidden lg:flex flex-wrap gap-2">
                 {categories.map((category, index) => {
                   const Icon = category.icon
                   return (
@@ -565,8 +576,7 @@ export default function Portfolio() {
                       }`}
                     >
                       <Icon className="w-4 h-4" />
-                      <span className="hidden sm:inline">{category.name}</span>
-                      <span className="sm:hidden">{category.name.split(' ')[0]}</span>
+                      {category.name}
                       <span className={`text-xs px-2 py-0.5 rounded-full ${
                         activeCategory === category.value 
                           ? 'bg-white/20 text-white' 
@@ -579,27 +589,105 @@ export default function Portfolio() {
                 })}
               </div>
 
+              {/* Mobile/Tablet Filter Dropdown */}
+              <div className="lg:hidden relative w-full max-w-md" ref={filterDropdownRef}>
+                <button
+                  onClick={() => setIsFilterOpen(!isFilterOpen)}
+                  className="w-full bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl px-4 py-3 flex items-center justify-between text-left hover:bg-gray-50 transition-all duration-200 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    {(() => {
+                      const activeFilter = categories.find(c => c.value === activeCategory)
+                      const Icon = activeFilter?.icon || Grid3X3
+                      return (
+                        <>
+                          <Icon className="w-5 h-5 text-blue-600" />
+                          <div>
+                            <div className="font-medium text-gray-900">{activeFilter?.name}</div>
+                            <div className="text-sm text-gray-500">{activeFilter?.count} projects</div>
+                          </div>
+                        </>
+                      )
+                    })()}
+                  </div>
+                  <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${isFilterOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Filter Dropdown Panel */}
+                {isFilterOpen && (
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-xl z-50 max-h-80 overflow-y-auto">
+                    {/* Close button */}
+                    <div className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 p-4 flex items-center justify-between">
+                      <span className="font-medium text-gray-900">Filter Projects</span>
+                      <button
+                        onClick={() => setIsFilterOpen(false)}
+                        className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+                      >
+                        <X className="w-5 h-5 text-gray-400" />
+                      </button>
+                    </div>
+                    
+                    {/* Filter Options */}
+                    <div className="p-2">
+                      {categories.map((category, index) => {
+                        const Icon = category.icon
+                        return (
+                          <button
+                            key={category.value}
+                            ref={el => { categoryRefs.current[index] = el }}
+                            onClick={() => {
+                              setActiveCategory(category.value)
+                              setIsFilterOpen(false)
+                            }}
+                            className={`w-full px-4 py-3 rounded-xl text-left transition-all duration-200 flex items-center gap-3 mb-1 ${
+                              activeCategory === category.value
+                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                                : 'text-gray-700 hover:bg-gray-50'
+                            }`}
+                          >
+                            <Icon className="w-5 h-5" />
+                            <div className="flex-1">
+                              <div className="font-medium">{category.name}</div>
+                              <div className={`text-sm ${
+                                activeCategory === category.value ? 'text-white/80' : 'text-gray-500'
+                              }`}>
+                                {category.count} projects
+                              </div>
+                            </div>
+                            {activeCategory === category.value && (
+                              <div className="w-2 h-2 bg-white rounded-full"></div>
+                            )}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+
               {/* View Mode Toggle */}
-              <div className="flex items-center gap-2 bg-white/80 rounded-full p-1 border border-gray-200">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-2xl p-1 border border-gray-200 shadow-sm">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-full transition-all duration-200 ${
+                  className={`p-2.5 rounded-xl transition-all duration-200 flex items-center gap-2 ${
                     viewMode === 'grid' 
-                      ? 'bg-blue-600 text-white shadow-lg' 
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg' 
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
                   <Grid3X3 className="w-4 h-4" />
+                  <span className="hidden sm:inline text-sm font-medium">Grid</span>
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-full transition-all duration-200 ${
+                  className={`p-2.5 rounded-xl transition-all duration-200 flex items-center gap-2 ${
                     viewMode === 'list' 
-                      ? 'bg-blue-600 text-white shadow-lg' 
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg' 
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
                   <Filter className="w-4 h-4" />
+                  <span className="hidden sm:inline text-sm font-medium">List</span>
                 </button>
               </div>
             </div>
