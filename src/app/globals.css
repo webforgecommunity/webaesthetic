@@ -178,6 +178,98 @@
   animation: gradient 3s ease infinite;
 }
 
+/* Execution Process Animations */
+@keyframes progress-line {
+  0% {
+    width: 0%;
+  }
+  16.66% {
+    width: 16.66%;
+  }
+  33.33% {
+    width: 33.33%;
+  }
+  50% {
+    width: 50%;
+  }
+  66.66% {
+    width: 66.66%;
+  }
+  83.33% {
+    width: 83.33%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes progress-line-enhanced {
+  0% {
+    width: 0%;
+    opacity: 0.8;
+  }
+  20% {
+    width: 20%;
+    opacity: 1;
+  }
+  40% {
+    width: 40%;
+    opacity: 1;
+  }
+  60% {
+    width: 60%;
+    opacity: 1;
+  }
+  80% {
+    width: 80%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes step-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-progress-line {
+  animation: progress-line 6s ease-in-out infinite;
+}
+
+.animate-progress-line-enhanced {
+  animation: progress-line-enhanced 8s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+.animate-step-appear {
+  animation: step-appear 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
 /* Delay classes */
 .delay-1000 {
   animation-delay: 1s;
