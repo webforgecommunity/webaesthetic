@@ -4,7 +4,6 @@ import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const navigation = [
@@ -72,12 +71,12 @@ export default function Header() {
             </div>
             
             {/* CTA Button */}
-            <Button 
-              asChild 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 border-2 border-blue-600 hover:border-blue-700"
+            <Link 
+              href="/contact"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 border-2 border-blue-600 hover:border-blue-700 inline-flex items-center justify-center"
             >
-              <Link href="/contact">Contact us</Link>
-            </Button>
+              Contact us
+            </Link>
           </div>
 
           {/* Medium Screen Navigation */}
@@ -106,12 +105,12 @@ export default function Header() {
 
           {/* Medium Screen Right Side */}
           <div className="hidden md:flex lg:hidden items-center space-x-4 ml-auto">
-            <Button 
-              asChild 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+            <Link 
+              href="/contact"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center"
             >
-              <Link href="/contact">Contact us</Link>
-            </Button>
+              Contact us
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -159,12 +158,12 @@ export default function Header() {
                   <Phone className="h-5 w-5 text-blue-600" />
                   <span className="text-base font-medium">+1-234-567-890</span>
                 </div>
-                <Button 
-                  asChild 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+                <Link 
+                  href="/contact"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 inline-flex items-center justify-center"
                 >
-                  <Link href="/contact">Contact us</Link>
-                </Button>
+                  Contact us
+                </Link>
               </div>
             </nav>
           </div>
