@@ -8,9 +8,8 @@ import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import { 
   ArrowRight, 
+  ArrowLeft,
   CheckCircle, 
-  Clock,
-  DollarSign,
   Users,
   Code,
   Palette,
@@ -678,6 +677,630 @@ const servicesData = {
         avatar: '/tech_logos/Azure.png'
       }
     ]
+  },
+  'api-development': {
+    id: 7,
+    title: 'API Development',
+    subtitle: 'Backend Excellence',
+    description: 'Robust RESTful and GraphQL APIs that power your applications. Secure, scalable, and well-documented backend solutions for any platform.',
+    longDescription: 'Our API development services focus on creating robust, scalable, and secure backend solutions that form the backbone of modern applications. We build RESTful and GraphQL APIs with comprehensive documentation and testing.',
+    icon: Code,
+    image: '/tech_logos/Node.jpeg',
+    features: [
+      'REST & GraphQL APIs',
+      'Database Integration',
+      'Authentication & Security',
+      'API Documentation',
+      'Rate Limiting & Caching',
+      'Microservices Architecture',
+      'Third-party Integrations',
+      'Performance Monitoring'
+    ],
+    technologies: ['Node.js', 'Express', 'GraphQL', 'MongoDB', 'PostgreSQL', 'Redis', 'JWT', 'Swagger'],
+    techImages: ['/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png', '/tech_logos/PostgreSQL.png'],
+    price: 'Starting from $2,499',
+    timeline: '3-6 weeks',
+    gradient: 'from-teal-500 to-green-500',
+    bgGradient: 'from-teal-50 to-green-50',
+    category: 'Backend',
+    projects: [
+      {
+        id: 1,
+        title: 'E-commerce API',
+        description: 'Comprehensive REST API for online marketplace with payment and inventory management',
+        image: '/tech_logos/Node.jpeg',
+        technologies: ['Node.js', 'Express', 'MongoDB'],
+        link: '/portfolio?filter=Backend'
+      },
+      {
+        id: 2,
+        title: 'Social Media GraphQL API',
+        description: 'GraphQL API for social platform with real-time features and advanced querying',
+        image: '/tech_logos/MongoDB.png',
+        technologies: ['GraphQL', 'Node.js', 'PostgreSQL'],
+        link: '/portfolio?filter=Backend'
+      },
+      {
+        id: 3,
+        title: 'Financial Services API',
+        description: 'Secure banking API with transaction processing and fraud detection',
+        image: '/tech_logos/PostgreSQL.png',
+        technologies: ['Node.js', 'PostgreSQL', 'Redis'],
+        link: '/portfolio?filter=Backend'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'API Design & Planning',
+        description: 'Architecture design, endpoint planning and data modeling',
+        icon: Target
+      },
+      {
+        step: '02',
+        title: 'Database Schema Design',
+        description: 'Optimized database structure and relationship mapping',
+        icon: Database
+      },
+      {
+        step: '03',
+        title: 'Core Development',
+        description: 'API endpoint development with business logic implementation',
+        icon: Code
+      },
+      {
+        step: '04',
+        title: 'Security Implementation',
+        description: 'Authentication, authorization and data validation',
+        icon: Shield
+      },
+      {
+        step: '05',
+        title: 'Testing & Documentation',
+        description: 'Comprehensive testing and API documentation creation',
+        icon: CheckCircle
+      },
+      {
+        step: '06',
+        title: 'Deployment & Monitoring',
+        description: 'Production deployment with performance monitoring',
+        icon: TrendingUp
+      }
+    ],
+    testimonials: [
+      {
+        name: 'Michael Chen',
+        role: 'Lead Developer, TechFlow',
+        content: 'The API they built is incredibly robust and well-documented. Integration was seamless and performance is outstanding.',
+        avatar: '/tech_logos/Node.jpeg'
+      },
+      {
+        name: 'Sarah Williams',
+        role: 'CTO, DataStream',
+        content: 'Professional backend development with excellent scalability. The GraphQL implementation exceeded our expectations.',
+        avatar: '/tech_logos/MongoDB.png'
+      }
+    ]
+  },
+  'devops-automation': {
+    id: 8,
+    title: 'DevOps Automation',
+    subtitle: 'Streamlined Operations',
+    description: 'Automate your deployment pipelines, monitoring, and infrastructure. Increase productivity and reduce downtime with modern DevOps practices.',
+    longDescription: 'Our DevOps automation services streamline your development and deployment processes, implementing continuous integration and deployment pipelines that ensure reliable, scalable, and efficient software delivery.',
+    icon: Rocket,
+    image: '/tech_logos/Docker.jpg',
+    features: [
+      'CI/CD Pipeline Setup',
+      'Infrastructure as Code',
+      'Automated Testing',
+      'Container Orchestration',
+      'Monitoring & Alerting',
+      'Security Automation',
+      'Performance Optimization',
+      'Disaster Recovery'
+    ],
+    technologies: ['Docker', 'Kubernetes', 'GitHub Actions', 'Terraform', 'Jenkins', 'Ansible', 'Prometheus', 'Grafana'],
+    techImages: ['/tech_logos/Docker.jpg', '/tech_logos/Kubernetes.jpg', '/tech_logos/AWS.jpg'],
+    price: 'Starting from $1,999',
+    timeline: '2-5 weeks',
+    gradient: 'from-violet-500 to-purple-500',
+    bgGradient: 'from-violet-50 to-purple-50',
+    category: 'Operations',
+    projects: [
+      {
+        id: 1,
+        title: 'Enterprise CI/CD Pipeline',
+        description: 'Automated deployment pipeline for microservices architecture with zero-downtime deployments',
+        image: '/tech_logos/Docker.jpg',
+        technologies: ['Docker', 'Kubernetes', 'GitHub Actions'],
+        link: '/portfolio?filter=DevOps'
+      },
+      {
+        id: 2,
+        title: 'Infrastructure Automation',
+        description: 'Complete infrastructure as code implementation with automated scaling and monitoring',
+        image: '/tech_logos/Kubernetes.jpg',
+        technologies: ['Terraform', 'Ansible', 'Prometheus'],
+        link: '/portfolio?filter=DevOps'
+      },
+      {
+        id: 3,
+        title: 'Multi-Cloud Setup',
+        description: 'Hybrid cloud infrastructure with automated failover and disaster recovery',
+        image: '/tech_logos/AWS.jpg',
+        technologies: ['AWS', 'Azure', 'Terraform'],
+        link: '/portfolio?filter=DevOps'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Current State Assessment',
+        description: 'Infrastructure audit and process evaluation',
+        icon: Search
+      },
+      {
+        step: '02',
+        title: 'Pipeline Design',
+        description: 'CI/CD workflow design and tool selection',
+        icon: Settings
+      },
+      {
+        step: '03',
+        title: 'Infrastructure Setup',
+        description: 'Automated infrastructure provisioning and configuration',
+        icon: Cloud
+      },
+      {
+        step: '04',
+        title: 'Automation Implementation',
+        description: 'Deployment automation and testing integration',
+        icon: Rocket
+      },
+      {
+        step: '05',
+        title: 'Monitoring Integration',
+        description: 'Performance monitoring and alerting system setup',
+        icon: TrendingUp
+      },
+      {
+        step: '06',
+        title: 'Team Training',
+        description: 'Knowledge transfer and best practices documentation',
+        icon: Users
+      }
+    ],
+    testimonials: [
+      {
+        name: 'Alex Thompson',
+        role: 'Engineering Manager, ScaleUp',
+        content: 'The DevOps automation reduced our deployment time from hours to minutes. The reliability improvement is remarkable.',
+        avatar: '/tech_logos/Docker.jpg'
+      },
+      {
+        name: 'Maria Rodriguez',
+        role: 'CTO, CloudFirst',
+        content: 'Professional implementation of modern DevOps practices. Our team productivity increased by 40% after the automation.',
+        avatar: '/tech_logos/Kubernetes.jpg'
+      }
+    ]
+  },
+  'ai-machine-learning': {
+    id: 9,
+    title: 'AI Machine Learning',
+    subtitle: 'Intelligent Solutions',
+    description: 'Leverage AI and ML to automate processes, gain insights, and create intelligent features. From chatbots to predictive analytics.',
+    longDescription: 'Our AI and Machine Learning services help businesses harness the power of artificial intelligence to automate processes, gain valuable insights from data, and create intelligent features that enhance user experiences and drive business growth.',
+    icon: Sparkles,
+    image: '/tech_logos/Python.png',
+    features: [
+      'Custom AI Models',
+      'Chatbots & AI Assistants',
+      'Predictive Analytics',
+      'Computer Vision',
+      'Natural Language Processing',
+      'Recommendation Systems',
+      'Automated Decision Making',
+      'Data Mining & Analysis'
+    ],
+    technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face', 'Scikit-learn', 'Pandas', 'NumPy'],
+    techImages: ['/tech_logos/Python.png', '/tech_logos/AWS.jpg'],
+    price: 'Starting from $4,999',
+    timeline: '8-16 weeks',
+    gradient: 'from-rose-500 to-pink-500',
+    bgGradient: 'from-rose-50 to-pink-50',
+    category: 'AI/ML',
+    projects: [
+      {
+        id: 1,
+        title: 'Intelligent Customer Service Bot',
+        description: 'AI-powered customer service solution with natural language understanding and automated responses',
+        image: '/tech_logos/Python.png',
+        technologies: ['Python', 'OpenAI', 'TensorFlow'],
+        link: '/portfolio?filter=AI'
+      },
+      {
+        id: 2,
+        title: 'Predictive Analytics Dashboard',
+        description: 'Machine learning platform for sales forecasting and business intelligence',
+        image: '/tech_logos/AWS.jpg',
+        technologies: ['Python', 'Scikit-learn', 'AWS'],
+        link: '/portfolio?filter=AI'
+      },
+      {
+        id: 3,
+        title: 'Computer Vision System',
+        description: 'AI-powered image recognition and analysis for quality control automation',
+        image: '/tech_logos/Python.png',
+        technologies: ['Python', 'OpenCV', 'TensorFlow'],
+        link: '/portfolio?filter=AI'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Problem Analysis',
+        description: 'Business requirements analysis and AI feasibility assessment',
+        icon: Search
+      },
+      {
+        step: '02',
+        title: 'Data Preparation',
+        description: 'Data collection, cleaning and preprocessing for model training',
+        icon: Database
+      },
+      {
+        step: '03',
+        title: 'Model Development',
+        description: 'AI model design, training and optimization',
+        icon: Sparkles
+      },
+      {
+        step: '04',
+        title: 'Testing & Validation',
+        description: 'Model validation, performance testing and accuracy evaluation',
+        icon: CheckCircle
+      },
+      {
+        step: '05',
+        title: 'Integration & Deployment',
+        description: 'AI model integration with existing systems and deployment',
+        icon: Rocket
+      },
+      {
+        step: '06',
+        title: 'Monitoring & Improvement',
+        description: 'Performance monitoring and continuous model improvement',
+        icon: TrendingUp
+      }
+    ],
+    testimonials: [
+      {
+        name: 'Dr. James Liu',
+        role: 'Research Director, InnovateLab',
+        content: 'The AI solution transformed our data analysis capabilities. The predictive accuracy exceeded our expectations significantly.',
+        avatar: '/tech_logos/Python.png'
+      },
+      {
+        name: 'Sophie Anderson',
+        role: 'Head of Digital, FutureTech',
+        content: 'Outstanding AI implementation that automated 70% of our customer service inquiries with high satisfaction rates.',
+        avatar: '/tech_logos/AWS.jpg'
+      }
+    ]
+  },
+  'cms-development': {
+    id: 10,
+    title: 'CMS Development',
+    subtitle: 'Content Management',
+    description: 'Custom content management systems that give you full control over your content. Easy to use interfaces with powerful admin capabilities.',
+    longDescription: 'Our CMS development services provide businesses with powerful, user-friendly content management systems that streamline content creation, editing, and publishing. We build custom solutions tailored to your specific workflow needs.',
+    icon: Palette,
+    image: '/tech_logos/next.png',
+    features: [
+      'Custom CMS Development',
+      'Content Workflow Management',
+      'Multi-user Access Control',
+      'Media Management System',
+      'SEO-Friendly Content',
+      'Content Versioning',
+      'API Integration',
+      'Mobile-Responsive Admin'
+    ],
+    technologies: ['Next.js', 'Sanity', 'Strapi', 'MongoDB', 'PostgreSQL', 'Contentful'],
+    techImages: ['/tech_logos/next.png', '/tech_logos/MongoDB.png', '/tech_logos/Node.jpeg'],
+    price: 'Starting from $2,799',
+    timeline: '4-8 weeks',
+    gradient: 'from-amber-500 to-orange-500',
+    bgGradient: 'from-amber-50 to-orange-50',
+    category: 'Content',
+    projects: [
+      {
+        id: 1,
+        title: 'News Portal CMS',
+        description: 'Custom CMS for news organization with editorial workflow and publishing automation',
+        image: '/tech_logos/next.png',
+        technologies: ['Next.js', 'Sanity', 'TypeScript'],
+        link: '/portfolio?filter=Content'
+      },
+      {
+        id: 2,
+        title: 'E-learning Content Platform',
+        description: 'Educational content management system with course creation and student tracking',
+        image: '/tech_logos/MongoDB.png',
+        technologies: ['Strapi', 'MongoDB', 'React'],
+        link: '/portfolio?filter=Content'
+      },
+      {
+        id: 3,
+        title: 'Corporate Knowledge Base',
+        description: 'Internal knowledge management system with search and collaboration features',
+        image: '/tech_logos/Node.jpeg',
+        technologies: ['Node.js', 'PostgreSQL', 'Elasticsearch'],
+        link: '/portfolio?filter=Content'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Content Analysis',
+        description: 'Content audit, workflow analysis and requirements gathering',
+        icon: Search
+      },
+      {
+        step: '02',
+        title: 'System Architecture',
+        description: 'CMS architecture design and technology stack selection',
+        icon: Layers
+      },
+      {
+        step: '03',
+        title: 'Custom Development',
+        description: 'Building tailored CMS with custom features and integrations',
+        icon: Code
+      },
+      {
+        step: '04',
+        title: 'User Training',
+        description: 'Admin training and content editor onboarding',
+        icon: Users
+      },
+      {
+        step: '05',
+        title: 'Content Migration',
+        description: 'Existing content migration and data optimization',
+        icon: Database
+      },
+      {
+        step: '06',
+        title: 'Support & Updates',
+        description: 'Ongoing maintenance and feature enhancements',
+        icon: Award
+      }
+    ],
+    testimonials: [
+      {
+        name: 'Maria Garcia',
+        role: 'Content Manager, MediaCorp',
+        content: 'The CMS revolutionized our content workflow. Publishing time reduced by 60% and our team loves the interface.',
+        avatar: '/tech_logos/next.png'
+      },
+      {
+        name: 'Thomas Wright',
+        role: 'Editorial Director, NewsCorp',
+        content: 'Excellent CMS solution that handles our high-volume content needs perfectly. The custom features work flawlessly.',
+        avatar: '/tech_logos/MongoDB.png'
+      }
+    ]
+  },
+  'database-design': {
+    id: 11,
+    title: 'Database Design',
+    subtitle: 'Data Architecture',
+    description: 'Optimize your data storage and retrieval with expertly designed databases. From SQL to NoSQL, we ensure performance and scalability.',
+    longDescription: 'Our database design services help businesses optimize their data architecture for performance, scalability, and reliability. We design robust database solutions that grow with your business needs.',
+    icon: Database,
+    image: '/tech_logos/PostgreSQL.png',
+    features: [
+      'Database Architecture Design',
+      'Performance Optimization',
+      'Data Migration Services',
+      'Backup & Recovery Strategy',
+      'Security Implementation',
+      'Scalability Planning',
+      'Query Optimization',
+      'Multi-Database Integration'
+    ],
+    technologies: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Elasticsearch', 'AWS RDS'],
+    techImages: ['/tech_logos/PostgreSQL.png', '/tech_logos/MongoDB.png', '/tech_logos/MySQL.jpeg', '/tech_logos/AWS.jpg'],
+    price: 'Starting from $1,799',
+    timeline: '2-4 weeks',
+    gradient: 'from-emerald-500 to-teal-500',
+    bgGradient: 'from-emerald-50 to-teal-50',
+    category: 'Database',
+    projects: [
+      {
+        id: 1,
+        title: 'E-commerce Database Optimization',
+        description: 'Optimized product catalog database reducing query time by 75% for major retailer',
+        image: '/tech_logos/PostgreSQL.png',
+        technologies: ['PostgreSQL', 'Redis', 'Indexing'],
+        link: '/portfolio?filter=Database'
+      },
+      {
+        id: 2,
+        title: 'Analytics Data Warehouse',
+        description: 'Built scalable data warehouse for business intelligence and reporting',
+        image: '/tech_logos/MongoDB.png',
+        technologies: ['MongoDB', 'Elasticsearch', 'ETL'],
+        link: '/portfolio?filter=Database'
+      },
+      {
+        id: 3,
+        title: 'Multi-tenant SaaS Database',
+        description: 'Designed secure multi-tenant database architecture for SaaS platform',
+        image: '/tech_logos/MySQL.jpeg',
+        technologies: ['MySQL', 'Sharding', 'Replication'],
+        link: '/portfolio?filter=Database'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Data Assessment',
+        description: 'Current database analysis and performance evaluation',
+        icon: Search
+      },
+      {
+        step: '02',
+        title: 'Schema Design',
+        description: 'Optimal database schema and relationship modeling',
+        icon: Layers
+      },
+      {
+        step: '03',
+        title: 'Implementation',
+        description: 'Database setup, indexing and optimization configuration',
+        icon: Settings
+      },
+      {
+        step: '04',
+        title: 'Migration & Testing',
+        description: 'Data migration with comprehensive testing and validation',
+        icon: Database
+      },
+      {
+        step: '05',
+        title: 'Performance Tuning',
+        description: 'Query optimization and performance fine-tuning',
+        icon: TrendingUp
+      },
+      {
+        step: '06',
+        title: 'Monitoring Setup',
+        description: 'Database monitoring and maintenance procedures',
+        icon: Shield
+      }
+    ],
+    testimonials: [
+      {
+        name: 'Alex Johnson',
+        role: 'CTO, DataTech Solutions',
+        content: 'Database performance improved dramatically after the redesign. Query speeds increased by 80% and maintenance became much easier.',
+        avatar: '/tech_logos/PostgreSQL.png'
+      },
+      {
+        name: 'Priya Patel',
+        role: 'Data Architect, ScaleUp Inc',
+        content: 'Professional database design that perfectly handles our complex data relationships and high transaction volume.',
+        avatar: '/tech_logos/MongoDB.png'
+      }
+    ]
+  },
+  'cybersecurity': {
+    id: 12,
+    title: 'Cybersecurity',
+    subtitle: 'Digital Protection',
+    description: 'Protect your digital assets with comprehensive security audits, vulnerability assessments, and implementation of security best practices.',
+    longDescription: 'Our cybersecurity services provide comprehensive protection for your digital assets. We conduct thorough security assessments, implement robust security measures, and provide ongoing monitoring to keep your business safe from cyber threats.',
+    icon: Shield,
+    image: '/tech_logos/AWS.jpg',
+    features: [
+      'Security Audits & Assessments',
+      'Penetration Testing',
+      'Compliance Implementation',
+      'Security Training Programs',
+      'Incident Response Planning',
+      'Network Security Setup',
+      'Data Encryption Services',
+      'Continuous Monitoring'
+    ],
+    technologies: ['AWS Security', 'OAuth', 'SSL/TLS', 'Encryption', 'Firewall', 'SIEM'],
+    techImages: ['/tech_logos/AWS.jpg', '/tech_logos/Azure.png'],
+    price: 'Starting from $2,299',
+    timeline: '3-6 weeks',
+    gradient: 'from-red-500 to-rose-500',
+    bgGradient: 'from-red-50 to-rose-50',
+    category: 'Security',
+    projects: [
+      {
+        id: 1,
+        title: 'Financial Institution Security',
+        description: 'Comprehensive security overhaul for financial services company meeting regulatory compliance',
+        image: '/tech_logos/AWS.jpg',
+        technologies: ['AWS Security', 'Encryption', 'Multi-factor Auth'],
+        link: '/portfolio?filter=Security'
+      },
+      {
+        id: 2,
+        title: 'Healthcare Data Protection',
+        description: 'HIPAA-compliant security implementation for healthcare provider protecting patient data',
+        image: '/tech_logos/Azure.png',
+        technologies: ['Azure Security', 'Data Encryption', 'Access Control'],
+        link: '/portfolio?filter=Security'
+      },
+      {
+        id: 3,
+        title: 'E-commerce Security Framework',
+        description: 'End-to-end security solution for online retailer including PCI DSS compliance',
+        image: '/tech_logos/AWS.jpg',
+        technologies: ['SSL/TLS', 'Payment Security', 'Fraud Detection'],
+        link: '/portfolio?filter=Security'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Security Assessment',
+        description: 'Comprehensive security audit and vulnerability analysis',
+        icon: Search
+      },
+      {
+        step: '02',
+        title: 'Risk Analysis',
+        description: 'Threat modeling and risk prioritization assessment',
+        icon: Target
+      },
+      {
+        step: '03',
+        title: 'Security Implementation',
+        description: 'Deployment of security measures and protective systems',
+        icon: Shield
+      },
+      {
+        step: '04',
+        title: 'Penetration Testing',
+        description: 'Ethical hacking and security validation testing',
+        icon: Settings
+      },
+      {
+        step: '05',
+        title: 'Training & Documentation',
+        description: 'Staff training and security procedure documentation',
+        icon: Users
+      },
+      {
+        step: '06',
+        title: 'Ongoing Monitoring',
+        description: 'Continuous security monitoring and incident response',
+        icon: Award
+      }
+    ],
+    testimonials: [
+      {
+        name: 'Rebecca Martinez',
+        role: 'CISO, SecureCorp',
+        content: 'Outstanding security implementation that protected us from multiple cyber threats. Their proactive approach is exceptional.',
+        avatar: '/tech_logos/AWS.jpg'
+      },
+      {
+        name: 'Michael Zhang',
+        role: 'IT Director, SafeTech',
+        content: 'Comprehensive security overhaul that brought us into full compliance. The team understood our complex requirements perfectly.',
+        avatar: '/tech_logos/Azure.png'
+      }
+    ]
   }
 }
 
@@ -839,191 +1462,187 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative pt-20 sm:pt-24 md:pt-28 pb-16 sm:pb-20 overflow-hidden">
-        {/* Enhanced Background Elements */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} opacity-60`} />
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-80 h-80 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/3 w-96 h-96 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse delay-2000"></div>
+      {/* Redesigned Hero Section */}
+      <section className="relative pt-20 sm:pt-24 md:pt-28 pb-20 sm:pb-24 overflow-hidden service-hero-bg">
+        {/* Unique Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 service-hero-pattern">
+            {/* Geometric Pattern Overlay */}
+            <div className="absolute inset-0 geometric-pattern opacity-20"></div>
+            
+            {/* Dynamic Light Beams */}
+            <div className="absolute top-10 left-10 w-1 h-32 bg-gradient-to-b from-blue-400/40 to-transparent transform rotate-12 light-beam-animate"></div>
+            <div className="absolute top-20 right-20 w-1 h-40 bg-gradient-to-b from-purple-400/40 to-transparent transform -rotate-12 light-beam-animate delay-700"></div>
+            <div className="absolute bottom-20 left-1/4 w-1 h-24 bg-gradient-to-t from-cyan-400/40 to-transparent transform rotate-45 light-beam-animate delay-1200"></div>
+            
+            {/* Floating Elements */}
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-40"></div>
+            <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-50 delay-700"></div>
+            <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-30 delay-1200"></div>
+          </div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div ref={heroRef} className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left Content */}
-              <div className="text-center lg:text-left">
-                <div className={`inline-flex items-center justify-center w-20 h-20 mb-8 rounded-3xl bg-gradient-to-br ${service.gradient} shadow-2xl group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="w-10 h-10 text-white" />
-                </div>
-                
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                  {service.title}
-                </h1>
-                
-                <p className="text-xl sm:text-2xl text-gray-600 mb-6 leading-relaxed">
-                  {service.subtitle}
-                </p>
-                
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  {service.longDescription}
-                </p>
+          <div ref={heroRef} className="max-w-7xl mx-auto">
+            
+            {/* Back to Services Button */}
+            <div className="mb-8">
+              <Link 
+                href="/services"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300 group"
+              >
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+                <span className="font-medium">Back to Services</span>
+              </Link>
+            </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
+            {/* Main Content Layout */}
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[600px]">
+              
+              {/* Left Content - Text & Info */}
+              <div className="lg:col-span-7 text-white">
+                
+                {/* Service Category Badge */}
+                <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8 glow-pulse-animate">
+                  <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient} animate-pulse`}></div>
+                  <span className="text-sm font-medium text-gray-200">{service.category} Service</span>
+                  <div className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center">
+                    <CheckCircle className="w-2 h-2 text-white" />
+                  </div>
+                </div>
+
+                {/* Main Title */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6 leading-none">
+                  <span className="block text-white/90">{service.title.split(' ')[0]}</span>
+                  <span className={`block bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
+                    {service.title.split(' ').slice(1).join(' ')}
+                  </span>
+                </h1>
+
+                {/* Subtitle */}
+                <div className="mb-6 sm:mb-8">
+                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed">
+                    {service.longDescription}
+                  </p>
+                </div>
+
+                {/* Key Stats Row */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
+                  <div className="text-center sm:text-left">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">{service.price.split(' ')[2]}</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Starting Price</div>
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">{service.timeline.split(' ')[0]}</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Delivery Time</div>
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">24/7</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Support</div>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link 
                     href="/contact"
-                    className={`bg-gradient-to-r ${service.gradient} text-white px-8 py-4 rounded-2xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 inline-flex items-center gap-3 group`}
+                    className={`group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r ${service.gradient} text-white font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 glow-pulse-animate`}
                   >
-                    <Rocket className="w-5 h-5" />
-                    <span>Start Your Project</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    <div className="relative flex items-center justify-center gap-2 sm:gap-3">
+                      <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <span className="text-sm sm:text-base">Start Project</span>
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
                   </Link>
                   
                   <Link 
                     href="/portfolio"
-                    className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-medium hover:bg-gray-50 transition-all duration-300 inline-flex items-center gap-3 group"
+                    className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/30"
                   >
-                    <ExternalLink className="w-5 h-5" />
-                    <span>View Portfolio</span>
+                    <div className="flex items-center justify-center gap-2 sm:gap-3">
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <span className="text-sm sm:text-base">View Work</span>
+                    </div>
                   </Link>
                 </div>
+              </div>
 
-                {/* Trust indicators */}
-                <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
-                  <div className="flex items-center gap-2">
-                    <div className="flex -space-x-2">
-                      {[...Array(4)].map((_, idx) => (
-                        <div key={idx} className={`w-8 h-8 rounded-full bg-gradient-to-br ${service.gradient} border-2 border-white flex items-center justify-center`}>
-                          <span className="text-xs text-white font-bold">★</span>
+              {/* Right Content - Visual Display */}
+              <div className="lg:col-span-5 mt-8 lg:mt-0">
+                <div className="relative">
+                  
+                  {/* Main Display Card */}
+                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    
+                    {/* Service Icon & Info */}
+                    <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                      <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+                        <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-bold text-white">{service.title}</h3>
+                        <p className="text-sm sm:text-base text-gray-300">{service.subtitle}</p>
+                      </div>
+                    </div>
+
+                    {/* Technology Stack Preview */}
+                    <div className="mb-6 sm:mb-8">
+                      <div className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3">Technology Stack</div>
+                      <div className="flex flex-wrap gap-2">
+                        {service.technologies.slice(0, 4).map((tech: string, idx: number) => (
+                          <span key={idx} className="px-2 sm:px-3 py-1 bg-white/10 border border-white/20 rounded-lg text-xs font-medium text-gray-200">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Key Features List */}
+                    <div className="space-y-3">
+                      <div className="text-sm text-gray-400 mb-3">Key Features</div>
+                      {service.features.slice(0, 4).map((feature: string, idx: number) => (
+                        <div key={idx} className="flex items-center gap-3">
+                          <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient}`}></div>
+                          <span className="text-sm text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
-                    <span className="text-sm text-gray-600 font-medium">500+ Happy Clients</span>
-                  </div>
-                  <div className="text-sm text-gray-500">|</div>
-                  <div className="text-sm text-gray-600 font-medium">100% Success Rate</div>
-                </div>
-              </div>
 
-              {/* Right Content - Visual Element */}
-              <div className="hidden lg:block">
-                <div className="relative">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-3xl opacity-10 blur-3xl transform rotate-6`}></div>
-                  <div className="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <div className="font-semibold text-gray-900">{service.title}</div>
-                          <div className="text-sm text-gray-500">{service.category}</div>
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-gray-50 rounded-xl p-4 text-center">
-                          <div className="text-2xl font-bold text-gray-900">{service.price.split(' ')[2]}</div>
-                          <div className="text-xs text-gray-500">Starting Price</div>
-                        </div>
-                        <div className="bg-gray-50 rounded-xl p-4 text-center">
-                          <div className="text-2xl font-bold text-gray-900">{service.timeline.split(' ')[0]}</div>
-                          <div className="text-xs text-gray-500">Timeline</div>
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        {service.features.slice(0, 3).map((feature: string, idx: number) => (
-                          <div key={idx} className="flex items-center gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-500" />
-                            <span className="text-sm text-gray-700">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <div className="flex gap-2">
-                        {service.techImages.slice(0, 4).map((img: string, idx: number) => (
-                          <div key={idx} className="w-8 h-8 rounded-lg bg-gray-100 p-1">
-                            <Image src={img} alt="" width={24} height={24} className="w-full h-full object-cover rounded" />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full animate-pulse delay-500"></div>
                   </div>
-                  
-                  {/* Floating elements */}
-                  <div className={`absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center animate-bounce-slow`}>
-                    <Sparkles className="w-8 h-8 text-white" />
-                  </div>
-                  <div className={`absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center animate-pulse`}>
-                    <Award className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Enhanced Stats Section */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="text-center group">
-              <div className="relative mb-6">
-                <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-xl`}>
-                  <DollarSign className="w-8 h-8 text-white" />
+                  {/* Floating Statistics */}
+                  <div className="absolute -top-4 -left-4 bg-gradient-to-br from-green-400/20 to-emerald-400/20 backdrop-blur-sm border border-green-400/30 rounded-2xl p-4 float-stats-animate">
+                    <div className="text-2xl font-bold text-green-400">98%</div>
+                    <div className="text-xs text-green-300">Success Rate</div>
+                  </div>
+
+                  <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-purple-400/20 to-pink-400/20 backdrop-blur-sm border border-purple-400/30 rounded-2xl p-4 float-stats-animate delay-1000">
+                    <div className="text-2xl font-bold text-purple-400">500+</div>
+                    <div className="text-xs text-purple-300">Projects</div>
+                  </div>
+
+                  {/* Background Glow */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-20 blur-3xl rounded-3xl -z-10 scale-110`}></div>
                 </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{service.price.split(' ')[2]}</div>
-              <div className="text-sm text-gray-600 font-medium">Starting Price</div>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative mb-6">
-                <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-xl`}>
-                  <Clock className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{service.timeline.split(' ')[0]}</div>
-              <div className="text-sm text-gray-600 font-medium">Delivery Time</div>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative mb-6">
-                <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-xl`}>
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">24/7</div>
-              <div className="text-sm text-gray-600 font-medium">Expert Support</div>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative mb-6">
-                <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-xl`}>
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">100%</div>
-              <div className="text-sm text-gray-600 font-medium">Quality Assured</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Enhanced Features Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+
+      {/* Enhanced Features Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-cyan-600/10 to-blue-600/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-200/30 to-pink-200/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-cyan-200/20 to-blue-200/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
           
           {/* Floating Particles */}
           <div className="absolute top-10 left-10 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60"></div>
@@ -1034,33 +1653,31 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full mb-8 backdrop-blur-sm">
-              <Sparkles className="w-5 h-5 text-blue-400 mr-2" />
-              <span className="text-blue-200 font-medium">Premium Features</span>
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 rounded-full mb-8 backdrop-blur-sm">
+              <Sparkles className="w-5 h-5 text-blue-600 mr-2" />
+              <span className="text-blue-800 font-medium">Premium Features</span>
             </div>
             
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              <span className="text-white">What We</span>
+              <span className="text-gray-900">What We</span>
               <span className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}> Deliver</span>
             </h2>
             
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Cutting-edge solutions engineered with precision, designed for performance, and built to exceed expectations.
             </p>
           </div>
 
-          {/* Features Grid - New Design */}
-          <div ref={featuresRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {service.features.map((feature: string, idx: number) => {
+          {/* Features Grid - Only 6 items in 2 rows */}
+          <div ref={featuresRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+            {service.features.slice(0, 6).map((feature: string, idx: number) => {
               const featureIcons = [
                 <Code key="code" className="w-7 h-7" />,
                 <Smartphone key="smartphone" className="w-7 h-7" />,
                 <Settings key="settings" className="w-7 h-7" />,
                 <Shield key="shield" className="w-7 h-7" />,
                 <Globe key="globe" className="w-7 h-7" />,
-                <Database key="database" className="w-7 h-7" />,
-                <TrendingUp key="trending" className="w-7 h-7" />,
-                <Award key="award" className="w-7 h-7" />
+                <Database key="database" className="w-7 h-7" />
               ];
               
               const gradients = [
@@ -1069,9 +1686,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                 'from-green-500 to-emerald-500',
                 'from-orange-500 to-red-500',
                 'from-indigo-500 to-purple-500',
-                'from-cyan-500 to-blue-500',
-                'from-pink-500 to-purple-500',
-                'from-emerald-500 to-green-500'
+                'from-cyan-500 to-blue-500'
               ];
 
               const descriptions = [
@@ -1080,9 +1695,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                 'Comprehensive optimization strategies to maximize visibility and conversion rates effectively.',
                 'Real-time engagement systems with intelligent targeting and personalization capabilities.',
                 'Seamless offline experiences with smart caching and synchronization technologies.',
-                'Secure payment processing with fraud detection and seamless user experience design.',
-                'Deep platform integrations with advanced sharing and community features built-in.',
-                'Advanced analytics with AI-powered insights and comprehensive performance tracking.'
+                'Secure payment processing with fraud detection and seamless user experience design.'
               ];
               
               return (
@@ -1092,7 +1705,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   {/* Main Card */}
-                  <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 h-full transition-all duration-500 hover:border-gray-600/70 hover:shadow-2xl hover:shadow-blue-500/10 group-hover:-translate-y-2">
+                  <div className="relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-3xl p-8 h-full transition-all duration-500 hover:border-gray-300 hover:shadow-2xl hover:shadow-blue-500/10 group-hover:-translate-y-2">
                     
                     {/* Glowing Effect */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${gradients[idx % gradients.length]} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
@@ -1113,11 +1726,11 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
 
                     {/* Content */}
                     <div className="relative z-10">
-                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-gray-100 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
                         {feature}
                       </h3>
                       
-                      <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                      <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         {descriptions[idx % descriptions.length]}
                       </p>
                     </div>
@@ -1137,23 +1750,18 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
               );
             })}
           </div>
-
-          {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-800/50 to-gray-700/50 border border-gray-600/50 rounded-2xl backdrop-blur-sm">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-gray-300 font-medium">All features included in every project</span>
-                <Award className="w-5 h-5 text-yellow-400 ml-2" />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Projects Showcase */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-100/50 to-purple-100/50 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-100/50 to-pink-100/50 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Our <span className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>Work</span>
@@ -1248,7 +1856,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
             </div>
 
             {/* Steps Grid */}
-            <div ref={processRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 sm:gap-6 lg:gap-4">
+            <div ref={processRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 sm:gap-6 lg:gap-4">
               {service.process.map((step: any, idx: number) => { // eslint-disable-line @typescript-eslint/no-explicit-any
                 const IconComponent = step.icon
                 const delays = ['0.5s', '1s', '1.5s', '2s', '2.5s', '3s']
@@ -1287,8 +1895,15 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
+          <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-2000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Client <span className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>Success</span>
@@ -1298,24 +1913,29 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
             </p>
           </div>
 
-          <div ref={testimonialRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div ref={testimonialRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {service.testimonials.map((testimonial: any, idx: number) => ( // eslint-disable-line @typescript-eslint/no-explicit-any
-              <div key={idx} className="bg-gray-50 rounded-3xl p-8 relative">
-                <Quote className="w-8 h-8 text-gray-300 mb-6" />
-                <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-                  &quot;{testimonial.content}&quot;
-                </p>
-                <div className="flex items-center gap-4">
-                  <Image
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                    className="rounded-full"
-                  />
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.role}</div>
+              <div key={idx} className="bg-white border border-gray-200 rounded-3xl p-8 relative shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                {/* Gradient Border Effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-3xl`}></div>
+                
+                <div className="relative z-10">
+                  <Quote className="w-8 h-8 text-gray-400 mb-6" />
+                  <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                    &quot;{testimonial.content}&quot;
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      width={48}
+                      height={48}
+                      className="rounded-full"
+                    />
+                    <div>
+                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600">{testimonial.role}</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1325,21 +1945,28 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-pulse delay-2000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div ref={ctaRef} className="max-w-4xl mx-auto text-center">
-            <Sparkles className="w-16 h-16 mx-auto mb-8 text-blue-400" />
+            <Sparkles className="w-16 h-16 mx-auto mb-8 text-blue-200" />
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Ready to Start Your <span className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>{service.title}</span> Project?
+              Ready to Start Your <span className="text-blue-200">{service.title}</span> Project?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
               Let&apos;s discuss your project requirements and create something amazing together.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 
                 href="/contact"
-                className={`bg-gradient-to-r ${service.gradient} text-white px-8 py-4 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 inline-flex items-center gap-3 group`}
+                className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 inline-flex items-center gap-3 group hover:bg-blue-50"
               >
                 <Target className="w-5 h-5" />
                 <span>Get Free Consultation</span>
@@ -1348,7 +1975,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
               
               <Link 
                 href="/services"
-                className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-medium hover:bg-gray-800 transition-all duration-300 inline-flex items-center gap-3"
+                className="border-2 border-blue-200 text-blue-100 px-8 py-4 rounded-2xl font-medium hover:bg-blue-500/20 transition-all duration-300 inline-flex items-center gap-3"
               >
                 <ArrowRight className="w-5 h-5 rotate-180" />
                 <span>Back to Services</span>

@@ -589,7 +589,7 @@ export default function Services() {
           </div> */}
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, idx) => {
               const Icon = service.icon
               return (
@@ -682,7 +682,7 @@ export default function Services() {
                     </div>
 
                     {/* Learn More Button */}
-                    <Link href={`/services/${service.slug}`} className={`w-full bg-gradient-to-r ${service.gradient} text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn`}>
+                    <Link href={`/services/${service.slug}`} className={`w-full bg-gradient-to-r ${service.gradient} text-white px-4 sm:px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm sm:text-base`}>
                       Learn More
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
