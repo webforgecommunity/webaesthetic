@@ -347,7 +347,7 @@ export default function Home() {
           <div className="relative max-w-7xl mx-auto">
             {/* Animated Progress Line - Desktop */}
             <div className="hidden xl:block absolute top-20 h-2 bg-gray-200 rounded-full overflow-hidden" style={{ left: '8.33%', right: '8.33%' }}>
-              <div className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-full animate-progress-line-enhanced shadow-lg"></div>
+              <div className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-full animate-progress-line shadow-lg"></div>
             </div>
 
             {/* Steps Grid */}

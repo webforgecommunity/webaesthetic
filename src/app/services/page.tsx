@@ -48,6 +48,7 @@ const services = [
     title: 'Web Development',
     subtitle: 'Full-Stack Solutions',
     description: 'We create powerful, scalable web applications using cutting-edge technologies like React, Next.js, and Node.js. From concept to deployment, we handle everything.',
+    slug: 'web-development',
     icon: Code,
     image: '/tech_logos/react.jpeg',
     features: ['Custom Web Applications', 'Progressive Web Apps', 'API Development', 'Database Design'],
@@ -64,6 +65,7 @@ const services = [
     title: 'Mobile App Development',
     subtitle: 'Cross-Platform Excellence',
     description: 'Native-quality mobile apps for iOS and Android using React Native and Flutter. Reach your audience wherever they are with seamless user experiences.',
+    slug: 'mobile-app-development',
     icon: Smartphone,
     image: '/tech_logos/Flutter.png',
     features: ['Cross-Platform Apps', 'Native Performance', 'App Store Optimization', 'Push Notifications'],
@@ -80,6 +82,7 @@ const services = [
     title: 'E-Commerce Solutions',
     subtitle: 'Online Store Excellence',
     description: 'Complete e-commerce platforms with payment integration, inventory management, and analytics. Turn your products into profit with our proven solutions.',
+    slug: 'e-commerce-solutions',
     icon: ShoppingCart,
     image: '/tech_logos/next.png',
     features: ['Payment Gateway Integration', 'Inventory Management', 'Order Tracking', 'Multi-vendor Support'],
@@ -96,6 +99,7 @@ const services = [
     title: 'UI/UX Design',
     subtitle: 'Beautiful & Functional',
     description: 'User-centered design that combines aesthetics with functionality. We create interfaces that users love and convert visitors into customers.',
+    slug: 'ui-ux-design',
     icon: Palette,
     image: '/tech_logos/react.jpeg',
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
@@ -112,6 +116,7 @@ const services = [
     title: 'SEO Optimization',
     subtitle: 'Search Engine Mastery',
     description: 'Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher and attract more qualified traffic.',
+    slug: 'seo-optimization',
     icon: Search,
     image: '/tech_logos/Google Cloud.jpeg',
     features: ['Keyword Research', 'On-Page SEO', 'Technical SEO', 'Content Strategy'],
@@ -128,6 +133,7 @@ const services = [
     title: 'Cloud Solutions',
     subtitle: 'Scalable Infrastructure',
     description: 'Deploy and scale your applications with confidence using AWS, Azure, and Google Cloud. We handle the complexity so you can focus on growth.',
+    slug: 'cloud-solutions',
     icon: Cloud,
     image: '/tech_logos/AWS.jpg',
     features: ['Cloud Migration', 'Auto Scaling', 'Security Setup', 'Cost Optimization'],
@@ -144,6 +150,7 @@ const services = [
     title: 'API Development',
     subtitle: 'Backend Excellence',
     description: 'Robust RESTful and GraphQL APIs that power your applications. Secure, scalable, and well-documented backend solutions for any platform.',
+    slug: 'api-development',
     icon: Code,
     image: '/tech_logos/Node.jpeg',
     features: ['REST & GraphQL APIs', 'Database Integration', 'Authentication & Security', 'API Documentation'],
@@ -160,6 +167,7 @@ const services = [
     title: 'DevOps & Automation',
     subtitle: 'Streamlined Operations',
     description: 'Automate your deployment pipelines, monitoring, and infrastructure. Increase productivity and reduce downtime with modern DevOps practices.',
+    slug: 'devops-automation',
     icon: Rocket,
     image: '/tech_logos/Docker.jpg',
     features: ['CI/CD Pipelines', 'Infrastructure as Code', 'Monitoring & Alerts', 'Performance Optimization'],
@@ -176,6 +184,7 @@ const services = [
     title: 'AI & Machine Learning',
     subtitle: 'Intelligent Solutions',
     description: 'Leverage AI and ML to automate processes, gain insights, and create intelligent features. From chatbots to predictive analytics.',
+    slug: 'ai-machine-learning',
     icon: Sparkles,
     image: '/tech_logos/Python.png',
     features: ['Chatbots & AI Assistants', 'Predictive Analytics', 'Computer Vision', 'Natural Language Processing'],
@@ -192,6 +201,7 @@ const services = [
     title: 'CMS Development',
     subtitle: 'Content Management',
     description: 'Custom content management systems that give you full control over your content. Easy to use interfaces with powerful admin capabilities.',
+    slug: 'cms-development',
     icon: Palette,
     image: '/tech_logos/next.png',
     features: ['Custom CMS', 'Content Workflow', 'Multi-user Access', 'Media Management'],
@@ -208,6 +218,7 @@ const services = [
     title: 'Database Design',
     subtitle: 'Data Architecture',
     description: 'Optimize your data storage and retrieval with expertly designed databases. From SQL to NoSQL, we ensure performance and scalability.',
+    slug: 'database-design',
     icon: Shield,
     image: '/tech_logos/PostgreSQL.png',
     features: ['Database Architecture', 'Performance Optimization', 'Data Migration', 'Backup Strategies'],
@@ -224,6 +235,7 @@ const services = [
     title: 'Cybersecurity',
     subtitle: 'Digital Protection',
     description: 'Protect your digital assets with comprehensive security audits, vulnerability assessments, and implementation of security best practices.',
+    slug: 'cybersecurity',
     icon: Shield,
     image: '/tech_logos/AWS.jpg',
     features: ['Security Audits', 'Penetration Testing', 'Compliance Setup', 'Security Training'],
@@ -670,10 +682,10 @@ export default function Services() {
                     </div>
 
                     {/* Learn More Button */}
-                    <button className={`w-full bg-gradient-to-r ${service.gradient} text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn`}>
+                    <Link href={`/services/${service.slug}`} className={`w-full bg-gradient-to-r ${service.gradient} text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn`}>
                       Learn More
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                   </div>
 
                   {/* Hover Effect Overlay */}

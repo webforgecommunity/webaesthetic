@@ -419,3 +419,78 @@
     font-size: 0.875rem;
   }
 }
+
+/* Service Detail Page Animations */
+@keyframes step-appear {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes progress-line-enhanced {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-step-appear {
+  animation: step-appear 0.8s ease-out both;
+}
+
+.animate-progress-line-enhanced {
+  animation: progress-line-enhanced 2s ease-in-out infinite alternate;
+}
+
+/* Enhanced hover effects for service cards */
+.service-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Process step hover animations */
+.process-step-hover {
+  transition: all 0.3s ease;
+}
+
+.process-step-hover:hover {
+  transform: translateY(-5px);
+}
+
+.process-step-hover:hover .process-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Testimonial card animations */
+.testimonial-card {
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile optimizations for service pages */
+@media (max-width: 768px) {
+  .animate-step-appear {
+    animation-duration: 0.6s;
+  }
+  
+  .service-card-hover:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
