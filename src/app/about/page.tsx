@@ -169,9 +169,15 @@ export default function About() {
   ]
 
   const stats = [
+<<<<<<< HEAD
     { number: "10+", label: "Projects Completed", icon: <CheckCircle className="w-6 h-6" /> },
     { number: "10+", label: "Happy Clients", icon: <Heart className="w-6 h-6" /> },
     { number: "2+", label: "Years Experience", icon: <Calendar className="w-6 h-6" /> },
+=======
+    { number: "100+", label: "Projects Completed", icon: <CheckCircle className="w-6 h-6" /> },
+    { number: "50+", label: "Happy Clients", icon: <Heart className="w-6 h-6" /> },
+    { number: "5+", label: "Years Experience", icon: <Calendar className="w-6 h-6" /> },
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
     { number: "24/7", label: "Support", icon: <Clock className="w-6 h-6" /> }
   ]
 
@@ -238,11 +244,19 @@ export default function About() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div ref={heroRef} className="max-w-5xl mx-auto text-center">
             {/* Badge */}
+<<<<<<< HEAD
             {/* <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-lg border border-blue-100">
               <Sparkles className="w-5 h-5 text-blue-600" />
               <span>About Webasthetic</span>
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             </div> */}
+=======
+            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-lg border border-blue-100">
+              <Sparkles className="w-5 h-5 text-blue-600" />
+              <span>About Webasthetic</span>
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            </div>
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
             
             {/* Main heading */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-gray-900 mb-8 leading-tight">
@@ -265,11 +279,19 @@ export default function About() {
               <div className="flex flex-wrap justify-center items-center gap-8 text-sm sm:text-base text-gray-500 mb-8">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-500" />
+<<<<<<< HEAD
                   <span>Elite Design</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5 text-yellow-500" />
                   <span>10+ Successful Projects</span>
+=======
+                  <span>Award-Winning Design</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Star className="w-5 h-5 text-yellow-500" />
+                  <span>100+ Successful Projects</span>
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="w-5 h-5 text-blue-500" />

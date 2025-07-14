@@ -67,7 +67,11 @@ export default function Header() {
             {/* Phone Number */}
             <div className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">
               <Phone className="h-4 w-4 text-blue-600" />
+<<<<<<< HEAD
               <span className="text-sm font-medium">+91 9216952323</span>
+=======
+              <span className="text-sm font-medium">+1-234-567-890</span>
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
             </div>
             
             {/* CTA Button */}

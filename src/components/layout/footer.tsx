@@ -189,7 +189,11 @@ export default function Footer() {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-gray-500 text-sm">
+<<<<<<< HEAD
               © {new Date().getFullYear()} Webasthetic Solutions. All rights reserved.
+=======
+              © {new Date().getFullYear()} Web Aesthetic Community. All rights reserved.
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-500">
               <Link href="/contact" className="hover:text-gray-700 transition-colors">

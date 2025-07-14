@@ -525,11 +525,19 @@ export default function Portfolio() {
             {/* Stats Section */}
             <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
+<<<<<<< HEAD
                 <div className="text-3xl font-bold text-blue-600 mb-2">10+</div>
                 <div className="text-sm text-gray-600">Projects Completed</div>
               </div>
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
                 <div className="text-3xl font-bold text-purple-600 mb-2">10</div>
+=======
+                <div className="text-3xl font-bold text-blue-600 mb-2">{projects.length}+</div>
+                <div className="text-sm text-gray-600">Projects Completed</div>
+              </div>
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
+                <div className="text-3xl font-bold text-purple-600 mb-2">{categories.length - 1}</div>
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
                 <div className="text-sm text-gray-600">Industries Served</div>
               </div>
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
