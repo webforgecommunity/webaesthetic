@@ -276,9 +276,9 @@ export default function Home() {
                   </div>
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 text-center">Custom Software</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 text-center">Shopify Development</h3>
                 <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed">
-                  Software solutions designed for your requirements
+                  Custom Shopify stores with advanced features, themes, and integrations.
                 </p>
               </div>
             </div>

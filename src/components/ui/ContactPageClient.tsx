@@ -8,13 +8,10 @@ import Footer from '@/components/layout/footer'
 import { 
   Mail, 
   Phone, 
-  MapPin, 
   Calendar,
-  MessageCircle,
   ArrowRight,
   CheckCircle,
   Send,
-  Sparkles,
   Star,
   Users,
   Clock,
@@ -43,13 +40,17 @@ export default function ContactPageClient() {
   })
 
   const services = [
-    'Web Development', 
-    'Mobile App Development', 
-    'UI/UX Design', 
-    'E-commerce Development',
+    'Website Development',
+    'Mobile App Development',
+    'E-commerce',
+    'AI/ML Implementation',
+    'Odoo Development',
+    'WordPress Development',
+    'Shopify Development',
+    'Custom Software',
+    'SEO Optimization',
+    'UI/UX Design',
     'Digital Marketing',
-    'SEO & Analytics',
-    'Cloud Solutions',
     'API Development',
     'Database Design',
     'CMS Development',
@@ -58,7 +59,7 @@ export default function ContactPageClient() {
     'Others'
   ]
   
-  const budgetRanges = ['Under $5,000', '$5,000 - $10,000', '$10,000 - $25,000', '$25,000 - $50,000', '$50,000+']
+  const budgetRanges = ['Under ₹10,000', '₹10,000 - ₹50,000', '₹50,000 - ₹1,00,000', '₹1,00,000 - ₹5,00,000', '₹5,00,000+']
 
   const countryCodes = [
     { code: '+91', name: 'India', flag: '🇮🇳' },
@@ -274,10 +275,10 @@ export default function ContactPageClient() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div ref={heroRef} className="max-w-5xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-lg border border-blue-100 hover:scale-105 transition-transform duration-300">
-              <MessageCircle className="w-5 h-5 text-blue-600" />
+            <div className="inline-flex items-center gap-3  mb-8 shadow-lg border border-blue-100 hover:scale-105 transition-transform duration-300">
+              {/* <MessageCircle className="w-5 h-5 text-blue-600" />
               <span>Let&apos;s Start a Conversation</span>
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div> */}
             </div>
             
             {/* Main heading with enhanced typography */}
@@ -305,7 +306,7 @@ export default function ContactPageClient() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5 text-yellow-500" />
-                  <span>100+ Projects</span>
+                  <span>10+ Projects</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="w-5 h-5 text-blue-500" />
@@ -334,7 +335,7 @@ export default function ContactPageClient() {
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group relative border-3 border-blue-200 bg-white/80 backdrop-blur-sm text-blue-700 px-10 py-5 rounded-2xl font-semibold hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105"
               >
-                <span className="text-lg">Send Message</span>
+                <span className="text-lg">Schedule Meeting</span>
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
@@ -369,7 +370,7 @@ export default function ContactPageClient() {
             </p>
           </div>
 
-          <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Email Card */}
             <div className="group bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
@@ -378,13 +379,13 @@ export default function ContactPageClient() {
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Email Us</h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">Get a response within 24 hours from our team</p>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">Get a response within 48 hours from our team</p>
                 <Link 
-                  href="mailto:hello@webasthetic.com" 
-                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300"
+                  href="mailto:webasthetic.solutions@gmail.com" 
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300 break-all"
                 >
-                  hello@webasthetic.com
-                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
+                  <span className="break-all">webasthetic.solutions@gmail.com</span>
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300 flex-shrink-0" />
                 </Link>
               </div>
             </div>
@@ -408,38 +409,22 @@ export default function ContactPageClient() {
               </div>
             </div>
 
-            {/* Office Card */}
+            {/* Schedule Meeting Card */}
             <div className="group bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-purple-100 opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
               <div className="relative z-10">
                 <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Visit Us</h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">Our modern office space</p>
-                <address className="text-purple-600 hover:text-purple-700 font-semibold not-italic transition-colors duration-300">
-                  123 Business Avenue<br />
-                  Suite 100, Mumbai, India
-                </address>
-              </div>
-            </div>
-
-            {/* Schedule Card */}
-            <div className="group bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-orange-100 opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="bg-gradient-to-br from-orange-500 to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                   <Calendar className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Schedule a Call</h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">Book a free 30-min consultation</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Schedule a Meeting</h3>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">Book a personalized consultation session</p>
                 <Link 
-                  href="https://calendly.com/webasthetic" 
+                  href="https://calendly.com/webasthetic-meeting" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300"
+                  className="text-purple-600 hover:text-purple-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300"
                 >
-                  Book Now
+                  Schedule Now
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </Link>
               </div>
@@ -464,11 +449,6 @@ export default function ContactPageClient() {
           <div className="max-w-5xl mx-auto">
             {/* Enhanced Form Header */}
             <div ref={formHeaderRef} className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-lg border border-blue-100">
-                <Send className="w-4 h-4" />
-                <span>Ready to Start Your Project?</span>
-              </div>
-              
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8">
                 Send Us a <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Message</span>
               </h2>
@@ -690,20 +670,25 @@ export default function ContactPageClient() {
                   <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 mb-3">
                     Project Budget
                   </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
-                  >
-                    <option value="">Select Budget Range</option>
-                    {budgetRanges.map((range) => (
-                      <option key={range} value={range}>
-                        {range}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleInputChange}
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg appearance-none cursor-pointer"
+                    >
+                      <option value="">Select Budget Range</option>
+                      {budgetRanges.map((range) => (
+                        <option key={range} value={range} className="py-2 px-4 text-gray-700 bg-white hover:bg-blue-50">
+                          {range}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Project Details */}
@@ -760,47 +745,6 @@ export default function ContactPageClient() {
                   </p>
                 </div>
               </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-pulse delay-2000"></div>
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <CheckCircle className="w-16 h-16 mx-auto mb-8 text-green-300" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Ready to Get <span className="text-blue-200">Started?</span>
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join over 100+ successful businesses that have transformed their digital presence with our expert team.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
-                href="/services"
-                className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 inline-flex items-center gap-3 group hover:bg-blue-50"
-              >
-                <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Explore Our Services</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
-              
-              <Link 
-                href="/portfolio"
-                className="border-2 border-blue-200 text-blue-100 px-8 py-4 rounded-2xl font-medium hover:bg-blue-500/20 transition-all duration-300 inline-flex items-center gap-3"
-              >
-                <span>View Our Work</span>
-                <ArrowRight className="w-5 h-5 rotate-45" />
-              </Link>
             </div>
           </div>
         </div>

@@ -25,7 +25,9 @@ import {
 } from 'lucide-react'
 
 // GSAP imports - using dynamic imports to avoid SSR issues
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let gsap: any = null
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let ScrollTrigger: any = null
 
 // Dynamic import for client-side only
@@ -258,7 +260,7 @@ export default function About() {
             {/* Description */}
             <div className="mb-12 max-w-4xl mx-auto">
               <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-6 leading-relaxed font-light">
-                We're a creative digital agency specializing in innovative web solutions, stunning designs, and powerful applications that drive business growth.
+                We&apos;re a creative digital agency specializing in innovative web solutions, stunning designs, and powerful applications that drive business growth.
               </p>
               
               {/* Key highlights */}
@@ -389,7 +391,7 @@ export default function About() {
           </div>
 
           <div ref={valuesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div key={value.title} className="value-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
@@ -422,7 +424,7 @@ export default function About() {
           </div>
 
           <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <div key={stat.label} className="stat-item text-center group">
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 group-hover:scale-105">
                   <div className="text-blue-600 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
@@ -454,7 +456,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {whyChooseUs.map((reason, index) => (
+            {whyChooseUs.map((reason) => (
               <div key={reason.title} className="group bg-white rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 hover:scale-105">
                 <div className="mb-6 text-center transform group-hover:scale-110 transition-transform duration-500">
                   {reason.icon}
@@ -484,7 +486,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-            {technologies.map((tech, index) => (
+            {technologies.map((tech) => (
               <div key={tech.name} className="group">
                 <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 aspect-square flex flex-col items-center justify-center group-hover:scale-110">
                   <img 
@@ -517,7 +519,7 @@ export default function About() {
               Ready to Start Your <span className="text-blue-200">Journey?</span>
             </h2>
             <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Let's collaborate to transform your ideas into exceptional digital experiences that drive real results.
+              Let&apos;s collaborate to transform your ideas into exceptional digital experiences that drive real results.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

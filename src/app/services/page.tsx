@@ -130,23 +130,40 @@ const services = [
   },
   {
     id: 6,
-    title: 'Cloud Solutions',
-    subtitle: 'Scalable Infrastructure',
-    description: 'Deploy and scale your applications with confidence using AWS, Azure, and Google Cloud. We handle the complexity so you can focus on growth.',
-    slug: 'cloud-solutions',
-    icon: Cloud,
-    image: '/tech_logos/AWS.jpg',
-    features: ['Cloud Migration', 'Auto Scaling', 'Security Setup', 'Cost Optimization'],
-    technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes'],
-    techImages: ['/tech_logos/AWS.jpg', '/tech_logos/Azure.png', '/tech_logos/Docker.jpg'],
-    price: 'Starting from $1,499',
-    timeline: '2-4 weeks',
-    gradient: 'from-cyan-500 to-blue-500',
-    bgGradient: 'from-cyan-50 to-blue-50',
-    category: 'Infrastructure'
+    title: 'Shopify Development',
+    subtitle: 'E-commerce Excellence',
+    description: 'Custom Shopify stores with advanced features, themes, and integrations. From setup to optimization, we create stores that convert.',
+    slug: 'shopify-development',
+    icon: ShoppingCart,
+    image: '/tech_logos/next.png',
+    features: ['Custom Shopify Themes', 'App Development', 'Payment Integration', 'Store Optimization'],
+    technologies: ['Shopify', 'Liquid', 'JavaScript', 'React'],
+    techImages: ['/tech_logos/next.png', '/tech_logos/react.jpeg'],
+    price: 'Starting from $2,499',
+    timeline: '3-6 weeks',
+    gradient: 'from-green-500 to-teal-500',
+    bgGradient: 'from-green-50 to-teal-50',
+    category: 'E-commerce'
   },
   {
     id: 7,
+    title: 'WordPress Development',
+    subtitle: 'CMS Solutions',
+    description: 'Professional WordPress websites with custom themes, plugins, and functionality. Secure, fast, and easy to manage.',
+    slug: 'wordpress-development',
+    icon: Code,
+    image: '/tech_logos/PHP.png',
+    features: ['Custom Themes', 'Plugin Development', 'SEO Optimization', 'Security Setup'],
+    technologies: ['WordPress', 'PHP', 'MySQL', 'JavaScript'],
+    techImages: ['/tech_logos/PHP.png', '/tech_logos/MySQL.jpeg'],
+    price: 'Starting from $1,799',
+    timeline: '2-5 weeks',
+    gradient: 'from-blue-500 to-purple-500',
+    bgGradient: 'from-blue-50 to-purple-50',
+    category: 'CMS'
+  },
+  {
+    id: 8,
     title: 'API Development',
     subtitle: 'Backend Excellence',
     description: 'Robust RESTful and GraphQL APIs that power your applications. Secure, scalable, and well-documented backend solutions for any platform.',
@@ -163,7 +180,7 @@ const services = [
     category: 'Backend'
   },
   {
-    id: 8,
+    id: 9,
     title: 'DevOps & Automation',
     subtitle: 'Streamlined Operations',
     description: 'Automate your deployment pipelines, monitoring, and infrastructure. Increase productivity and reduce downtime with modern DevOps practices.',
@@ -180,7 +197,7 @@ const services = [
     category: 'Operations'
   },
   {
-    id: 9,
+    id: 10,
     title: 'AI & Machine Learning',
     subtitle: 'Intelligent Solutions',
     description: 'Leverage AI and ML to automate processes, gain insights, and create intelligent features. From chatbots to predictive analytics.',
@@ -197,7 +214,7 @@ const services = [
     category: 'AI/ML'
   },
   {
-    id: 10,
+    id: 11,
     title: 'CMS Development',
     subtitle: 'Content Management',
     description: 'Custom content management systems that give you full control over your content. Easy to use interfaces with powerful admin capabilities.',
@@ -214,7 +231,7 @@ const services = [
     category: 'Content'
   },
   {
-    id: 11,
+    id: 12,
     title: 'Database Design',
     subtitle: 'Data Architecture',
     description: 'Optimize your data storage and retrieval with expertly designed databases. From SQL to NoSQL, we ensure performance and scalability.',
@@ -229,23 +246,6 @@ const services = [
     gradient: 'from-emerald-500 to-teal-500',
     bgGradient: 'from-emerald-50 to-teal-50',
     category: 'Database'
-  },
-  {
-    id: 12,
-    title: 'Cybersecurity',
-    subtitle: 'Digital Protection',
-    description: 'Protect your digital assets with comprehensive security audits, vulnerability assessments, and implementation of security best practices.',
-    slug: 'cybersecurity',
-    icon: Shield,
-    image: '/tech_logos/AWS.jpg',
-    features: ['Security Audits', 'Penetration Testing', 'Compliance Setup', 'Security Training'],
-    technologies: ['AWS Security', 'OAuth', 'SSL/TLS', 'Encryption'],
-    techImages: ['/tech_logos/AWS.jpg'],
-    price: 'Starting from $2,299',
-    timeline: '3-6 weeks',
-    gradient: 'from-red-500 to-rose-500',
-    bgGradient: 'from-red-50 to-rose-50',
-    category: 'Security'
   }
 ]
 

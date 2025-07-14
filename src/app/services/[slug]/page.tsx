@@ -1198,107 +1198,211 @@ const servicesData = {
       }
     ]
   },
-  'cybersecurity': {
-    id: 12,
-    title: 'Cybersecurity',
-    subtitle: 'Digital Protection',
-    description: 'Protect your digital assets with comprehensive security audits, vulnerability assessments, and implementation of security best practices.',
-    longDescription: 'Our cybersecurity services provide comprehensive protection for your digital assets. We conduct thorough security assessments, implement robust security measures, and provide ongoing monitoring to keep your business safe from cyber threats.',
-    icon: Shield,
-    image: '/tech_logos/AWS.jpg',
+  'shopify-development': {
+    id: 6,
+    title: 'Shopify Development',
+    subtitle: 'E-commerce Excellence',
+    description: 'Custom Shopify stores with advanced features, themes, and integrations. From setup to optimization, we create stores that convert.',
+    longDescription: 'Our Shopify development services provide end-to-end e-commerce solutions, from custom theme development to complex app integrations. We create high-converting Shopify stores that deliver exceptional shopping experiences.',
+    icon: ShoppingCart,
+    image: '/tech_logos/next.png',
     features: [
-      'Security Audits & Assessments',
-      'Penetration Testing',
-      'Compliance Implementation',
-      'Security Training Programs',
-      'Incident Response Planning',
-      'Network Security Setup',
-      'Data Encryption Services',
-      'Continuous Monitoring'
+      'Custom Shopify Theme Development',
+      'Shopify App Development',
+      'Payment Gateway Integration',
+      'Store Optimization & SEO',
+      'Third-party App Integration',
+      'Migration from Other Platforms',
+      'Performance Optimization',
+      'Multi-language Support'
     ],
-    technologies: ['AWS Security', 'OAuth', 'SSL/TLS', 'Encryption', 'Firewall', 'SIEM'],
-    techImages: ['/tech_logos/AWS.jpg', '/tech_logos/Azure.png'],
-    price: 'Starting from $2,299',
+    technologies: ['Shopify', 'Liquid', 'JavaScript', 'React', 'Node.js', 'GraphQL'],
+    techImages: ['/tech_logos/next.png', '/tech_logos/react.jpeg', '/tech_logos/Node.jpeg'],
+    price: 'Starting from $2,499',
     timeline: '3-6 weeks',
-    gradient: 'from-red-500 to-rose-500',
-    bgGradient: 'from-red-50 to-rose-50',
-    category: 'Security',
+    gradient: 'from-green-500 to-teal-500',
+    bgGradient: 'from-green-50 to-teal-50',
+    category: 'E-commerce',
     projects: [
       {
         id: 1,
-        title: 'Financial Institution Security',
-        description: 'Comprehensive security overhaul for financial services company meeting regulatory compliance',
-        image: '/tech_logos/AWS.jpg',
-        technologies: ['AWS Security', 'Encryption', 'Multi-factor Auth'],
-        link: '/portfolio?filter=Security'
+        title: 'Fashion Brand Store',
+        description: 'Custom Shopify store for luxury fashion brand with advanced product customization',
+        image: '/tech_logos/next.png',
+        technologies: ['Shopify Plus', 'Custom Theme', 'App Integration'],
+        link: '/portfolio?filter=E-commerce'
       },
       {
         id: 2,
-        title: 'Healthcare Data Protection',
-        description: 'HIPAA-compliant security implementation for healthcare provider protecting patient data',
-        image: '/tech_logos/Azure.png',
-        technologies: ['Azure Security', 'Data Encryption', 'Access Control'],
-        link: '/portfolio?filter=Security'
+        title: 'Multi-vendor Marketplace',
+        description: 'Shopify marketplace solution with vendor management and commission tracking',
+        image: '/tech_logos/react.jpeg',
+        technologies: ['Shopify', 'Custom App', 'Payment Processing'],
+        link: '/portfolio?filter=E-commerce'
       },
       {
         id: 3,
-        title: 'E-commerce Security Framework',
-        description: 'End-to-end security solution for online retailer including PCI DSS compliance',
-        image: '/tech_logos/AWS.jpg',
-        technologies: ['SSL/TLS', 'Payment Security', 'Fraud Detection'],
-        link: '/portfolio?filter=Security'
+        title: 'Subscription Box Service',
+        description: 'Shopify store with subscription management and automated recurring billing',
+        image: '/tech_logos/Node.jpeg',
+        technologies: ['Shopify', 'Subscription App', 'Webhooks'],
+        link: '/portfolio?filter=E-commerce'
       }
     ],
     process: [
       {
         step: '01',
-        title: 'Security Assessment',
-        description: 'Comprehensive security audit and vulnerability analysis',
-        icon: Search
-      },
-      {
-        step: '02',
-        title: 'Risk Analysis',
-        description: 'Threat modeling and risk prioritization assessment',
+        title: 'Store Planning',
+        description: 'Business requirements analysis and Shopify strategy planning',
         icon: Target
       },
       {
+        step: '02',
+        title: 'Design & Theme',
+        description: 'Custom theme design and user experience optimization',
+        icon: Palette
+      },
+      {
         step: '03',
-        title: 'Security Implementation',
-        description: 'Deployment of security measures and protective systems',
-        icon: Shield
+        title: 'Development',
+        description: 'Theme customization and custom functionality development',
+        icon: Code
       },
       {
         step: '04',
-        title: 'Penetration Testing',
-        description: 'Ethical hacking and security validation testing',
+        title: 'Integration',
+        description: 'Payment, shipping and third-party service integration',
         icon: Settings
       },
       {
         step: '05',
-        title: 'Training & Documentation',
-        description: 'Staff training and security procedure documentation',
-        icon: Users
+        title: 'Testing & Launch',
+        description: 'Comprehensive testing and store launch preparation',
+        icon: Rocket
       },
       {
         step: '06',
-        title: 'Ongoing Monitoring',
-        description: 'Continuous security monitoring and incident response',
+        title: 'Optimization',
+        description: 'Performance monitoring and conversion optimization',
+        icon: TrendingUp
+      }
+    ],
+    testimonials: [
+      {
+        name: 'Emma Rodriguez',
+        role: 'Founder, StyleCraft Boutique',
+        content: 'Our Shopify store conversion rate increased by 65% after the custom development. The shopping experience is seamless.',
+        avatar: '/tech_logos/next.png'
+      },
+      {
+        name: 'David Kim',
+        role: 'CEO, TechGadgets',
+        content: 'Professional Shopify development that perfectly handles our complex product variations and inventory management.',
+        avatar: '/tech_logos/react.jpeg'
+      }
+    ]
+  },
+  'wordpress-development': {
+    id: 7,
+    title: 'WordPress Development',
+    subtitle: 'CMS Solutions',
+    description: 'Professional WordPress websites with custom themes, plugins, and functionality. Secure, fast, and easy to manage.',
+    longDescription: 'Our WordPress development services deliver powerful, scalable websites with custom themes and functionality. We create secure, SEO-optimized WordPress solutions that are easy to manage and maintain.',
+    icon: Code,
+    image: '/tech_logos/PHP.png',
+    features: [
+      'Custom WordPress Themes',
+      'Plugin Development',
+      'SEO Optimization',
+      'Security Implementation',
+      'Performance Optimization',
+      'E-commerce Integration',
+      'Multi-site Management',
+      'Custom Post Types & Fields'
+    ],
+    technologies: ['WordPress', 'PHP', 'MySQL', 'JavaScript', 'SCSS', 'ACF'],
+    techImages: ['/tech_logos/PHP.png', '/tech_logos/MySQL.jpeg', '/tech_logos/next.png'],
+    price: 'Starting from $1,799',
+    timeline: '2-5 weeks',
+    gradient: 'from-blue-500 to-purple-500',
+    bgGradient: 'from-blue-50 to-purple-50',
+    category: 'CMS',
+    projects: [
+      {
+        id: 1,
+        title: 'Corporate Website',
+        description: 'Professional corporate website with custom theme and CMS functionality',
+        image: '/tech_logos/PHP.png',
+        technologies: ['WordPress', 'Custom Theme', 'ACF'],
+        link: '/portfolio?filter=Web'
+      },
+      {
+        id: 2,
+        title: 'News & Blog Platform',
+        description: 'High-performance news website with advanced content management features',
+        image: '/tech_logos/MySQL.jpeg',
+        technologies: ['WordPress', 'Custom Plugins', 'Caching'],
+        link: '/portfolio?filter=Web'
+      },
+      {
+        id: 3,
+        title: 'E-learning Platform',
+        description: 'WordPress-based learning management system with course functionality',
+        image: '/tech_logos/next.png',
+        technologies: ['WordPress', 'LMS Plugin', 'Payment Gateway'],
+        link: '/portfolio?filter=Education'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Requirements Analysis',
+        description: 'Website goals, content strategy and functionality planning',
+        icon: Search
+      },
+      {
+        step: '02',
+        title: 'Design & Wireframing',
+        description: 'Custom design creation and user experience planning',
+        icon: Palette
+      },
+      {
+        step: '03',
+        title: 'Theme Development',
+        description: 'Custom WordPress theme development and functionality coding',
+        icon: Code
+      },
+      {
+        step: '04',
+        title: 'Content Migration',
+        description: 'Content setup, SEO optimization and plugin configuration',
+        icon: Database
+      },
+      {
+        step: '05',
+        title: 'Testing & Security',
+        description: 'Security implementation, performance testing and optimization',
+        icon: Shield
+      },
+      {
+        step: '06',
+        title: 'Launch & Training',
+        description: 'Website launch and client training for content management',
         icon: Award
       }
     ],
     testimonials: [
       {
-        name: 'Rebecca Martinez',
-        role: 'CISO, SecureCorp',
-        content: 'Outstanding security implementation that protected us from multiple cyber threats. Their proactive approach is exceptional.',
-        avatar: '/tech_logos/AWS.jpg'
+        name: 'Lisa Thompson',
+        role: 'Marketing Director, GrowthCorp',
+        content: 'Our WordPress website perfectly reflects our brand and is incredibly easy to update. The custom features work flawlessly.',
+        avatar: '/tech_logos/PHP.png'
       },
       {
-        name: 'Michael Zhang',
-        role: 'IT Director, SafeTech',
-        content: 'Comprehensive security overhaul that brought us into full compliance. The team understood our complex requirements perfectly.',
-        avatar: '/tech_logos/Azure.png'
+        name: 'Robert Chen',
+        role: 'Founder, EduTech Solutions',
+        content: 'The WordPress e-learning platform they built handles thousands of students seamlessly. Excellent development work.',
+        avatar: '/tech_logos/MySQL.jpeg'
       }
     ]
   }
