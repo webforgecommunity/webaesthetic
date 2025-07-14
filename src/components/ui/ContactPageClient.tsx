@@ -14,8 +14,7 @@ import {
   Send,
   Star,
   Users,
-  Clock,
-  ChevronDown
+  Clock
 } from 'lucide-react'
 
 export default function ContactPageClient() {
@@ -24,46 +23,6 @@ export default function ContactPageClient() {
   const formRef = useRef<HTMLDivElement>(null)
   const formHeaderRef = useRef<HTMLDivElement>(null)
   const [showSuccess, setShowSuccess] = useState(false)
-
-  const services = [
-    'Website Development',
-    'Mobile App Development',
-    'E-commerce',
-    'AI/ML Implementation',
-    'Odoo Development',
-    'WordPress Development',
-    'Shopify Development',
-    'Custom Software',
-    'SEO Optimization',
-    'UI/UX Design',
-    'Digital Marketing',
-    'API Development',
-    'Database Design',
-    'CMS Development',
-    'DevOps Services',
-    'Maintenance & Support',
-    'Others'
-  ]
-  
-  const budgetRanges = ['Under ₹10,000', '₹10,000 - ₹50,000', '₹50,000 - ₹1,00,000', '₹1,00,000 - ₹5,00,000', '₹5,00,000+']
-
-  const countryCodes = [
-    { code: '+91', name: 'India', flag: '🇮🇳' },
-    { code: '+1', name: 'USA', flag: '🇺🇸' },
-    { code: '+44', name: 'UK', flag: '🇬🇧' },
-    { code: '+61', name: 'Australia', flag: '🇦🇺' },
-    { code: '+81', name: 'Japan', flag: '🇯🇵' },
-    { code: '+49', name: 'Germany', flag: '🇩🇪' },
-    { code: '+33', name: 'France', flag: '🇫🇷' },
-    { code: '+86', name: 'China', flag: '🇨🇳' },
-    { code: '+7', name: 'Russia', flag: '🇷🇺' },
-    { code: '+55', name: 'Brazil', flag: '🇧🇷' },
-    { code: '+39', name: 'Italy', flag: '🇮🇹' },
-    { code: '+34', name: 'Spain', flag: '🇪🇸' },
-    { code: '+82', name: 'South Korea', flag: '🇰🇷' },
-    { code: '+65', name: 'Singapore', flag: '🇸🇬' },
-    { code: '+971', name: 'UAE', flag: '🇦🇪' }
-  ]
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -145,7 +104,7 @@ export default function ContactPageClient() {
         stagger: 0.5
       })
     }
-  }, []) // Remove showCountryDropdown from dependencies
+  }, [])
 
   // Removed showCountryDropdown effect and state
 
