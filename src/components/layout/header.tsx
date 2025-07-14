@@ -18,7 +18,7 @@ export default function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" role="banner">
       <div className="w-full max-w-7xl mx-auto px-0.5 sm:px-1 lg:px-1.5">
         <div className="flex items-center h-20">
           {/* Logo */}
@@ -67,11 +67,7 @@ export default function Header() {
             {/* Phone Number */}
             <div className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">
               <Phone className="h-4 w-4 text-blue-600" />
-<<<<<<< HEAD
               <span className="text-sm font-medium">+91 9216952323</span>
-=======
-              <span className="text-sm font-medium">+1-234-567-890</span>
->>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
             </div>
             
             {/* CTA Button */}
@@ -173,6 +169,6 @@ export default function Header() {
           </div>
         )}
       </div>
-    </header>
+    </div>
   )
 }

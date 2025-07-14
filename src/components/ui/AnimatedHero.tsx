@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Star, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 interface AnimatedHeroProps {
@@ -19,19 +19,11 @@ export default function AnimatedHero({ className = '' }: AnimatedHeroProps) {
     return (
       <div className={`space-y-6 sm:space-y-8 text-center lg:text-left ${className}`}>
         <div className="space-y-4 sm:space-y-6">
-<<<<<<< HEAD
           {/* <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-xs sm:text-sm font-medium">
             <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current text-blue-600" />
             <span className="hidden sm:inline">Make Your Development Project Successful</span>
             <span className="sm:hidden">Your Success Partner</span>
           </div> */}
-=======
-          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-xs sm:text-sm font-medium">
-            <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current text-blue-600" />
-            <span className="hidden sm:inline">Make Your Development Project Successful</span>
-            <span className="sm:hidden">Your Success Partner</span>
-          </div>
->>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
           
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
             Build Your 
@@ -53,19 +45,11 @@ export default function AnimatedHero({ className = '' }: AnimatedHeroProps) {
   return (
     <div className={`space-y-6 sm:space-y-8 animate-fade-in-up text-center lg:text-left ${className}`}>
       <div className="space-y-4 sm:space-y-6">
-<<<<<<< HEAD
         {/* <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-xs sm:text-sm font-medium animate-bounce-subtle">
           <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current text-blue-600" />
           <span className="hidden sm:inline">Make Your Development Project Successful</span>
           <span className="sm:hidden">Your Success Partner</span>
         </div> */}
-=======
-        <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-xs sm:text-sm font-medium animate-bounce-subtle">
-          <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current text-blue-600" />
-          <span className="hidden sm:inline">Make Your Development Project Successful</span>
-          <span className="sm:hidden">Your Success Partner</span>
-        </div>
->>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
         
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
           Build Your 

@@ -1567,22 +1567,21 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
       <Header />
       
       {/* Redesigned Hero Section */}
-      <section className="relative pt-20 sm:pt-24 md:pt-28 pb-20 sm:pb-24 overflow-hidden service-hero-bg">
-        {/* Unique Background Pattern */}
+      <section className="relative pt-20 sm:pt-24 md:pt-28 pb-20 sm:pb-24 overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100">
+        {/* Light Background Pattern */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 service-hero-pattern">
-            {/* Geometric Pattern Overlay */}
-            <div className="absolute inset-0 geometric-pattern opacity-20"></div>
-            
-            {/* Dynamic Light Beams */}
-            <div className="absolute top-10 left-10 w-1 h-32 bg-gradient-to-b from-blue-400/40 to-transparent transform rotate-12 light-beam-animate"></div>
-            <div className="absolute top-20 right-20 w-1 h-40 bg-gradient-to-b from-purple-400/40 to-transparent transform -rotate-12 light-beam-animate delay-700"></div>
-            <div className="absolute bottom-20 left-1/4 w-1 h-24 bg-gradient-to-t from-cyan-400/40 to-transparent transform rotate-45 light-beam-animate delay-1200"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-purple-50/60 to-blue-100/80">
+            {/* Subtle Geometric Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-20 left-20 w-32 h-32 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+              <div className="absolute top-40 right-40 w-24 h-24 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-700"></div>
+              <div className="absolute bottom-40 left-1/3 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1200"></div>
+            </div>
             
             {/* Floating Elements */}
             <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-40"></div>
             <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-50 delay-700"></div>
-            <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-30 delay-1200"></div>
+            <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-blue-300 rounded-full animate-ping opacity-30 delay-1200"></div>
           </div>
         </div>
 
@@ -1593,7 +1592,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
             <div className="mb-8">
               <Link 
                 href="/services"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300 group"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm border border-blue-200 rounded-full text-blue-700 hover:bg-white/90 transition-all duration-300 group shadow-lg"
               >
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
                 <span className="font-medium">Back to Services</span>
@@ -1604,28 +1603,27 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[600px]">
               
               {/* Left Content - Text & Info */}
-              <div className="lg:col-span-7 text-white">
+              <div className="lg:col-span-7 text-gray-900">
                 
                 {/* Service Category Badge */}
-                <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8 glow-pulse-animate">
+                <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/80 backdrop-blur-sm border border-blue-200 rounded-full mb-8 shadow-lg">
                   <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient} animate-pulse`}></div>
-                  <span className="text-sm font-medium text-gray-200">{service.category} Service</span>
-                  <div className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center">
-                    <CheckCircle className="w-2 h-2 text-white" />
+                  <span className="text-sm font-medium text-blue-700">{service.category}</span>
+                  <div className="w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center">
+                    <CheckCircle className="w-2 h-2 text-blue-600" />
                   </div>
                 </div>
 
                 {/* Main Title */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6 leading-none">
-                  <span className="block text-white/90">{service.title.split(' ')[0]}</span>
-                  <span className={`block bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
-                    {service.title.split(' ').slice(1).join(' ')}
+                  <span className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
+                    {service.title}
                   </span>
                 </h1>
 
                 {/* Subtitle */}
                 <div className="mb-6 sm:mb-8">
-                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed">
+                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 font-light leading-relaxed">
                     {service.longDescription}
                   </p>
                 </div>
@@ -1633,16 +1631,16 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                 {/* Key Stats Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
                   <div className="text-center sm:text-left">
-                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">{service.price.split(' ')[2]}</div>
-                    <div className="text-xs sm:text-sm text-gray-400">Starting Price</div>
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">10+</div>
+                    <div className="text-xs sm:text-sm text-gray-500">Projects Completed</div>
                   </div>
                   <div className="text-center sm:text-left">
-                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">{service.timeline.split(' ')[0]}</div>
-                    <div className="text-xs sm:text-sm text-gray-400">Delivery Time</div>
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">{service.timeline.split(' ')[0]}</div>
+                    <div className="text-xs sm:text-sm text-gray-500">Delivery Time</div>
                   </div>
                   <div className="text-center sm:text-left">
-                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">24/7</div>
-                    <div className="text-xs sm:text-sm text-gray-400">Support</div>
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">24/7</div>
+                    <div className="text-xs sm:text-sm text-gray-500">Support Available</div>
                   </div>
                 </div>
 
@@ -1650,7 +1648,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link 
                     href="/contact"
-                    className={`group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r ${service.gradient} text-white font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 glow-pulse-animate`}
+                    className={`group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r ${service.gradient} text-white font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 shadow-lg`}
                   >
                     <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     <div className="relative flex items-center justify-center gap-2 sm:gap-3">
@@ -1662,7 +1660,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                   
                   <Link 
                     href="/portfolio"
-                    className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/30"
+                    className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/80 backdrop-blur-sm border border-blue-200 text-blue-700 font-semibold rounded-2xl transition-all duration-300 hover:bg-white/90 hover:border-blue-300 shadow-lg"
                   >
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                       <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -1677,7 +1675,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                 <div className="relative">
                   
                   {/* Main Display Card */}
-                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                  <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200 rounded-3xl p-6 sm:p-8 shadow-2xl">
                     
                     {/* Service Icon & Info */}
                     <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -1685,17 +1683,17 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                         <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg sm:text-xl font-bold text-white">{service.title}</h3>
-                        <p className="text-sm sm:text-base text-gray-300">{service.subtitle}</p>
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900">{service.title}</h3>
+                        <p className="text-sm sm:text-base text-gray-600">{service.subtitle}</p>
                       </div>
                     </div>
 
                     {/* Technology Stack Preview */}
                     <div className="mb-6 sm:mb-8">
-                      <div className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3">Technology Stack</div>
+                      <div className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">Technology Stack</div>
                       <div className="flex flex-wrap gap-2">
                         {service.technologies.slice(0, 4).map((tech: string, idx: number) => (
-                          <span key={idx} className="px-2 sm:px-3 py-1 bg-white/10 border border-white/20 rounded-lg text-xs font-medium text-gray-200">
+                          <span key={idx} className="px-2 sm:px-3 py-1 bg-blue-50 border border-blue-200 rounded-lg text-xs font-medium text-blue-700">
                             {tech}
                           </span>
                         ))}
@@ -1704,33 +1702,33 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
 
                     {/* Key Features List */}
                     <div className="space-y-3">
-                      <div className="text-sm text-gray-400 mb-3">Key Features</div>
+                      <div className="text-sm text-gray-500 mb-3">Key Features</div>
                       {service.features.slice(0, 4).map((feature: string, idx: number) => (
                         <div key={idx} className="flex items-center gap-3">
                           <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient}`}></div>
-                          <span className="text-sm text-gray-300">{feature}</span>
+                          <span className="text-sm text-gray-700">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Decorative Elements */}
                     <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full animate-pulse"></div>
-                    <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full animate-pulse delay-500"></div>
+                    <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-blue-300 to-purple-300 rounded-full animate-pulse delay-500"></div>
                   </div>
 
                   {/* Floating Statistics */}
-                  <div className="absolute -top-4 -left-4 bg-gradient-to-br from-green-400/20 to-emerald-400/20 backdrop-blur-sm border border-green-400/30 rounded-2xl p-4 float-stats-animate">
-                    <div className="text-2xl font-bold text-green-400">98%</div>
-                    <div className="text-xs text-green-300">Success Rate</div>
+                  <div className="absolute -top-4 -left-4 bg-white/80 backdrop-blur-sm border border-green-200 rounded-2xl p-4 shadow-lg">
+                    <div className="text-2xl font-bold text-green-600">98%</div>
+                    <div className="text-xs text-green-500">Success Rate</div>
                   </div>
 
-                  <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-purple-400/20 to-pink-400/20 backdrop-blur-sm border border-purple-400/30 rounded-2xl p-4 float-stats-animate delay-1000">
-                    <div className="text-2xl font-bold text-purple-400">500+</div>
-                    <div className="text-xs text-purple-300">Projects</div>
+                  <div className="absolute -bottom-4 -right-4 bg-white/80 backdrop-blur-sm border border-purple-200 rounded-2xl p-4 shadow-lg">
+                    <div className="text-2xl font-bold text-purple-600">10+</div>
+                    <div className="text-xs text-purple-500">Projects</div>
                   </div>
 
                   {/* Background Glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-20 blur-3xl rounded-3xl -z-10 scale-110`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-10 blur-3xl rounded-3xl -z-10 scale-110`}></div>
                 </div>
               </div>
             </div>
@@ -1757,11 +1755,6 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 rounded-full mb-8 backdrop-blur-sm">
-              <Sparkles className="w-5 h-5 text-blue-600 mr-2" />
-              <span className="text-blue-800 font-medium">Premium Features</span>
-            </div>
-            
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight">
               <span className="text-gray-900">What We</span>
               <span className={`bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}> Deliver</span>

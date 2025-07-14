@@ -669,11 +669,11 @@ export default function Services() {
                       </div>
                     </div>
 
-                    {/* Pricing & Timeline */}
+                    {/* Service Info */}
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="text-center p-3 bg-gray-50 rounded-xl">
-                        <div className="text-xs text-gray-500 mb-1">Starting Price</div>
-                        <div className="font-bold text-gray-900">{service.price}</div>
+                        <div className="text-xs text-gray-500 mb-1">Category</div>
+                        <div className="font-bold text-gray-900">{service.category}</div>
                       </div>
                       <div className="text-center p-3 bg-gray-50 rounded-xl">
                         <div className="text-xs text-gray-500 mb-1">Timeline</div>

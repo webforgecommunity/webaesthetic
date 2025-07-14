@@ -322,22 +322,24 @@ export default function ContactPageClient() {
             {/* Enhanced CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link 
-                href="tel:+1234567890"
+                href="tel:+919216952323"
                 className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 inline-flex items-center gap-3 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                <div className="absolute 9216952323inset-0 bg-gradient-to-r from-blue-700 to-purple-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
                 <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
                 <span className="relative z-10 text-lg">Call Now</span>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
               </Link>
               
-              <button 
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative border-3 border-blue-200 bg-white/80 backdrop-blur-sm text-blue-700 px-10 py-5 rounded-2xl font-semibold hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105"
-              >
-                <span className="text-lg">Schedule Meeting</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              <Link 
+                  href="https://calendly.com/websthetic-solutions/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative border-3 border-blue-200 bg-white/80 backdrop-blur-sm text-blue-700 px-10 py-5 rounded-2xl font-semibold hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105"
+                >
+                  <span className="text-lg">Schedule Meeting</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
             </div>
 
             {/* Scroll indicator */}
@@ -403,7 +405,7 @@ export default function ContactPageClient() {
                   href="tel:+1234567890" 
                   className="text-green-600 hover:text-green-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300"
                 >
-                  +1 (234) 567-890
+                  +91 9216952323
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </Link>
               </div>
@@ -419,7 +421,7 @@ export default function ContactPageClient() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Schedule a Meeting</h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">Book a personalized consultation session</p>
                 <Link 
-                  href="https://calendly.com/webasthetic-meeting" 
+                  href="https://calendly.com/websthetic-solutions/30min" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-purple-600 hover:text-purple-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300"
