@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import { 
@@ -26,9 +25,7 @@ import {
 } from 'lucide-react'
 
 // GSAP imports - using dynamic imports to avoid SSR issues
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let gsap: any = null
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let ScrollTrigger: any = null
 
 // Dynamic import for client-side only
@@ -261,7 +258,7 @@ export default function About() {
             {/* Description */}
             <div className="mb-12 max-w-4xl mx-auto">
               <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-6 leading-relaxed font-light">
-                We&apos;re a creative digital agency specializing in innovative web solutions, stunning designs, and powerful applications that drive business growth.
+                We're a creative digital agency specializing in innovative web solutions, stunning designs, and powerful applications that drive business growth.
               </p>
               
               {/* Key highlights */}
@@ -392,7 +389,7 @@ export default function About() {
           </div>
 
           <div ref={valuesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {values.map((value) => (
+            {values.map((value, index) => (
               <div key={value.title} className="value-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
@@ -425,7 +422,7 @@ export default function About() {
           </div>
 
           <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {stats.map((stat) => (
+            {stats.map((stat, index) => (
               <div key={stat.label} className="stat-item text-center group">
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 group-hover:scale-105">
                   <div className="text-blue-600 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
@@ -457,7 +454,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {whyChooseUs.map((reason) => (
+            {whyChooseUs.map((reason, index) => (
               <div key={reason.title} className="group bg-white rounded-3xl p-8 hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 hover:scale-105">
                 <div className="mb-6 text-center transform group-hover:scale-110 transition-transform duration-500">
                   {reason.icon}
@@ -487,14 +484,12 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-            {technologies.map((tech) => (
+            {technologies.map((tech, index) => (
               <div key={tech.name} className="group">
                 <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 aspect-square flex flex-col items-center justify-center group-hover:scale-110">
-                  <Image 
+                  <img 
                     src={tech.logo} 
                     alt={tech.name}
-                    width={48}
-                    height={48}
                     className="w-12 h-12 object-contain mb-3 group-hover:scale-110 transition-transform duration-300"
                   />
                   <span className="text-sm font-medium text-gray-700 text-center group-hover:text-blue-600 transition-colors duration-300">
@@ -522,7 +517,7 @@ export default function About() {
               Ready to Start Your <span className="text-blue-200">Journey?</span>
             </h2>
             <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Let&apos;s collaborate to transform your ideas into exceptional digital experiences that drive real results.
+              Let's collaborate to transform your ideas into exceptional digital experiences that drive real results.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
