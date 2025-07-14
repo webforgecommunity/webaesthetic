@@ -37,11 +37,19 @@ export default function Home() {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full border-2 border-white"></div>
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-2 border-white"></div>
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full border-2 border-white flex items-center justify-center">
+<<<<<<< HEAD
+                    <span className="text-white text-xs sm:text-sm font-bold">10+</span>
+                  </div>
+                </div>
+                <div className="text-sm sm:text-base text-gray-600 text-center sm:text-left">
+                  <span className="font-semibold text-gray-900">10+ Projects Delivered</span>
+=======
                     <span className="text-white text-xs sm:text-sm font-bold">50+</span>
                   </div>
                 </div>
                 <div className="text-sm sm:text-base text-gray-600 text-center sm:text-left">
                   <span className="font-semibold text-gray-900">500+ Projects Delivered</span>
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
                 </div>
               </div>
 
@@ -1005,7 +1013,11 @@ export default function Home() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             <div className="text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+<<<<<<< HEAD
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">10+</div>
+=======
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">500+</div>
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
               <div className="text-sm sm:text-base md:text-lg text-gray-600 font-semibold mb-1 sm:mb-2">Projects Delivered</div>
               <div className="text-xs sm:text-sm text-gray-500">Across web, mobile & e-commerce</div>
             </div>
@@ -1023,7 +1035,11 @@ export default function Home() {
             </div>
             
             <div className="text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+<<<<<<< HEAD
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">2+</div>
+=======
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">5+</div>
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
               <div className="text-sm sm:text-base md:text-lg text-gray-600 font-semibold mb-1 sm:mb-2">Years Experience</div>
               <div className="text-xs sm:text-sm text-gray-500">Building digital solutions</div>
             </div>
@@ -1045,7 +1061,11 @@ export default function Home() {
               <span className="block">Digital Presence?</span>
             </h2>
             <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
+<<<<<<< HEAD
+              Join 10+ successful businesses who chose Webasthetic. 
+=======
               Join 500+ successful businesses who chose Webasthetic. 
+>>>>>>> 85d62573e593140960f1b13d2ceb70469a1f6cbf
               Let&apos;s create something amazing together.
             </p>
             
