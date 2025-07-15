@@ -14,8 +14,7 @@ import {
   Send,
   Star,
   Users,
-  Clock,
-  ChevronDown
+  Clock
 } from 'lucide-react'
 
 export default function ContactPageClient() {
@@ -23,61 +22,7 @@ export default function ContactPageClient() {
   const cardsRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLDivElement>(null)
   const formHeaderRef = useRef<HTMLDivElement>(null)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [showOtherService, setShowOtherService] = useState(false)
-  const [countryCode, setCountryCode] = useState('+91')
-  const [showCountryDropdown, setShowCountryDropdown] = useState(false)
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    company: '',
-    services: [] as string[],
-    otherService: '',
-    budget: '',
-    projectDetails: ''
-  })
-
-  const services = [
-    'Website Development',
-    'Mobile App Development',
-    'E-commerce',
-    'AI/ML Implementation',
-    'Odoo Development',
-    'WordPress Development',
-    'Shopify Development',
-    'Custom Software',
-    'SEO Optimization',
-    'UI/UX Design',
-    'Digital Marketing',
-    'API Development',
-    'Database Design',
-    'CMS Development',
-    'DevOps Services',
-    'Maintenance & Support',
-    'Others'
-  ]
-  
-  const budgetRanges = ['Under ₹10,000', '₹10,000 - ₹50,000', '₹50,000 - ₹1,00,000', '₹1,00,000 - ₹5,00,000', '₹5,00,000+']
-
-  const countryCodes = [
-    { code: '+91', name: 'India', flag: '🇮🇳' },
-    { code: '+1', name: 'USA', flag: '🇺🇸' },
-    { code: '+44', name: 'UK', flag: '🇬🇧' },
-    { code: '+61', name: 'Australia', flag: '🇦🇺' },
-    { code: '+81', name: 'Japan', flag: '🇯🇵' },
-    { code: '+49', name: 'Germany', flag: '🇩🇪' },
-    { code: '+33', name: 'France', flag: '🇫🇷' },
-    { code: '+86', name: 'China', flag: '🇨🇳' },
-    { code: '+7', name: 'Russia', flag: '🇷🇺' },
-    { code: '+55', name: 'Brazil', flag: '🇧🇷' },
-    { code: '+39', name: 'Italy', flag: '🇮🇹' },
-    { code: '+34', name: 'Spain', flag: '🇪🇸' },
-    { code: '+82', name: 'South Korea', flag: '🇰🇷' },
-    { code: '+65', name: 'Singapore', flag: '🇸🇬' },
-    { code: '+971', name: 'UAE', flag: '🇦🇪' }
-  ]
+  const [showSuccess, setShowSuccess] = useState(false)
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -159,71 +104,11 @@ export default function ContactPageClient() {
         stagger: 0.5
       })
     }
-  }, []) // Remove showCountryDropdown from dependencies
+  }, [])
 
-  // Separate useEffect for click outside handler
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (showCountryDropdown) {
-        const target = event.target as HTMLElement
-        if (!target.closest('.country-dropdown')) {
-          setShowCountryDropdown(false)
-        }
-      }
-    }
+  // Removed showCountryDropdown effect and state
 
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [showCountryDropdown])
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleServiceChange = (service: string) => {
-    setFormData(prev => ({
-      ...prev,
-      services: prev.services.includes(service)
-        ? prev.services.filter(s => s !== service)
-        : [...prev.services, service]
-    }))
-
-    if (service === 'Others') {
-      setShowOtherService(!formData.services.includes(service))
-    }
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData)
-    
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      company: '',
-      services: [],
-      otherService: '',
-      budget: '',
-      projectDetails: ''
-    })
-    
-    setIsSubmitting(false)
-    setShowOtherService(false)
-    alert('Thank you for your message! We&apos;ll get back to you soon.')
-  }
+  // Remove all formData, handleInputChange, handleServiceChange, handleSubmit, etc.
 
   return (
     <>
@@ -322,22 +207,24 @@ export default function ContactPageClient() {
             {/* Enhanced CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link 
-                href="tel:+1234567890"
+                href="tel:+919216952323"
                 className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 inline-flex items-center gap-3 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                <div className="absolute 9216952323inset-0 bg-gradient-to-r from-blue-700 to-purple-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
                 <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
                 <span className="relative z-10 text-lg">Call Now</span>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
               </Link>
               
-              <button 
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative border-3 border-blue-200 bg-white/80 backdrop-blur-sm text-blue-700 px-10 py-5 rounded-2xl font-semibold hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105"
-              >
-                <span className="text-lg">Schedule Meeting</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              <Link 
+                  href="https://calendly.com/websthetic-solutions/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative border-3 border-blue-200 bg-white/80 backdrop-blur-sm text-blue-700 px-10 py-5 rounded-2xl font-semibold hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105"
+                >
+                  <span className="text-lg">Schedule Meeting</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
             </div>
 
             {/* Scroll indicator */}
@@ -403,7 +290,7 @@ export default function ContactPageClient() {
                   href="tel:+1234567890" 
                   className="text-green-600 hover:text-green-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300"
                 >
-                  +1 (234) 567-890
+                  +91 9216952323
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </Link>
               </div>
@@ -419,7 +306,7 @@ export default function ContactPageClient() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Schedule a Meeting</h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">Book a personalized consultation session</p>
                 <Link 
-                  href="https://calendly.com/webasthetic-meeting" 
+                  href="https://calendly.com/websthetic-solutions/30min" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-purple-600 hover:text-purple-700 font-semibold inline-flex items-center gap-2 group/link transition-colors duration-300"
@@ -493,7 +380,13 @@ export default function ContactPageClient() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full -translate-y-16 translate-x-16 opacity-50"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full translate-y-12 -translate-x-12 opacity-50"></div>
               
-              <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                className="space-y-8 relative z-10"
+                onSubmit={() => setTimeout(() => setShowSuccess(true), 1200)}
+              >
+                <input type="hidden" name="access_key" value="34081183-f93a-40b6-9c8c-7a373792def5" />
                 {/* Name Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="form-item">
@@ -504,14 +397,11 @@ export default function ContactPageClient() {
                       type="text"
                       id="firstName"
                       name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
                       placeholder="John"
                       required
                       className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
                     />
                   </div>
-                  
                   <div className="form-item">
                     <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-3">
                       Last Name <span className="text-red-500">*</span>
@@ -520,15 +410,12 @@ export default function ContactPageClient() {
                       type="text"
                       id="lastName"
                       name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
                       placeholder="Doe"
                       required
                       className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
                     />
                   </div>
                 </div>
-
                 {/* Email and Phone Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="form-item">
@@ -539,79 +426,24 @@ export default function ContactPageClient() {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
                       placeholder="john@example.com"
                       required
                       className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
                     />
                   </div>
-                  
                   <div className="form-item">
                     <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-3">
                       Phone Number
                     </label>
-                    <div className="relative flex">
-                      {/* Country Code Dropdown */}
-                      <div className="relative country-dropdown z-[1000]">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault()
-                            e.stopPropagation()
-                            setShowCountryDropdown(!showCountryDropdown)
-                          }}
-                          className="flex items-center gap-2 px-4 py-4 border-2 border-gray-200 border-r-0 rounded-l-2xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-w-[120px] relative z-[100]"
-                        >
-                          <span className="text-lg">
-                            {countryCodes.find(c => c.code === countryCode)?.flag}
-                          </span>
-                          <span className="font-medium text-gray-700">{countryCode}</span>
-                          <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${showCountryDropdown ? 'rotate-180' : ''}`} />
-                        </button>
-                        
-                        {/* Dropdown Menu with Portal-like positioning */}
-                        {showCountryDropdown && (
-                          <>
-                            {/* Backdrop to prevent scroll */}
-                            <div className="fixed inset-0 z-[9998]" onClick={() => setShowCountryDropdown(false)}></div>
-                            <div className="absolute top-full left-0 mt-2 w-64 bg-white border-2 border-gray-200 rounded-2xl shadow-2xl z-[9999] max-h-60 overflow-y-auto overscroll-contain">
-                              {countryCodes.map((country) => (
-                                <button
-                                  key={country.code}
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.preventDefault()
-                                    e.stopPropagation()
-                                    setCountryCode(country.code)
-                                    setShowCountryDropdown(false)
-                                  }}
-                                  className="w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors duration-200 text-left border-b border-gray-100 last:border-b-0 first:rounded-t-2xl last:rounded-b-2xl"
-                                >
-                                  <span className="text-lg">{country.flag}</span>
-                                  <span className="font-medium text-gray-700">{country.code}</span>
-                                  <span className="text-sm text-gray-500 truncate">{country.name}</span>
-                                </button>
-                              ))}
-                            </div>
-                          </>
-                        )}
-                      </div>
-                      
-                      {/* Phone Input */}
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="9876543210"
-                        className="flex-1 px-6 py-4 border-2 border-gray-200 rounded-r-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
-                      />
-                    </div>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="9876543210"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
+                    />
                   </div>
                 </div>
-
                 {/* Company Name */}
                 <div className="form-item">
                   <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-3">
@@ -621,76 +453,24 @@ export default function ContactPageClient() {
                     type="text"
                     id="company"
                     name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
                     placeholder="Your Company"
                     className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
                   />
                 </div>
-
                 {/* Services Interested In */}
                 <div className="form-item">
                   <label className="block text-sm font-semibold text-gray-700 mb-4">
                     Services Interested In
                   </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                    {services.map((service) => (
-                      <button
-                        key={service}
-                        type="button"
-                        onClick={() => handleServiceChange(service)}
-                        className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 border-2 ${
-                          formData.services.includes(service)
-                            ? 'bg-blue-600 text-white border-blue-600 shadow-lg scale-105'
-                            : 'bg-white text-gray-700 border-gray-200 hover:border-blue-300 hover:bg-blue-50 hover:scale-105'
-                        }`}
-                      >
-                        {service}
-                      </button>
-                    ))}
-                  </div>
-                  
-                  {/* Other Service Input */}
-                  {showOtherService && (
-                    <div className="mt-4">
-                      <input
-                        type="text"
-                        name="otherService"
-                        value={formData.otherService}
-                        onChange={handleInputChange}
-                        placeholder="Please specify the service you need..."
-                        className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg"
-                      />
-                    </div>
-                  )}
+                  <input type="text" name="services" placeholder="e.g. Website Development, Mobile App Development" className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg" />
                 </div>
-
                 {/* Budget */}
                 <div className="form-item">
                   <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 mb-3">
                     Project Budget
                   </label>
-                  <div className="relative">
-                    <select
-                      id="budget"
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleInputChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg appearance-none cursor-pointer"
-                    >
-                      <option value="">Select Budget Range</option>
-                      {budgetRanges.map((range) => (
-                        <option key={range} value={range} className="py-2 px-4 text-gray-700 bg-white hover:bg-blue-50">
-                          {range}
-                        </option>
-                      ))}
-                    </select>
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                      <ChevronDown className="w-5 h-5 text-gray-400" />
-                    </div>
-                  </div>
+                  <input type="text" name="budget" placeholder="e.g. ₹10,000 - ₹50,000" className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 bg-gray-50 focus:bg-white text-lg" />
                 </div>
-
                 {/* Project Details */}
                 <div className="form-item">
                   <label htmlFor="projectDetails" className="block text-sm font-semibold text-gray-700 mb-3">
@@ -699,37 +479,30 @@ export default function ContactPageClient() {
                   <textarea
                     id="projectDetails"
                     name="projectDetails"
-                    value={formData.projectDetails}
-                    onChange={handleInputChange}
                     placeholder="Tell us about your project, goals, timeline, and any specific requirements. The more details you provide, the better we can help you..."
                     rows={6}
                     required
                     className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 resize-none bg-gray-50 focus:bg-white text-lg"
                   />
                 </div>
-
+                {/* Honeypot Spam Protection */}
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                 {/* Submit Button */}
                 <div className="form-item">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-6 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 inline-flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed text-xl relative overflow-hidden"
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-6 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 inline-flex items-center justify-center gap-3 group text-xl relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin relative z-10"></div>
-                        <span className="relative z-10">Sending Message...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
-                        <span className="relative z-10">Send Message</span>
-                      </>
-                    )}
+                    <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+                    <span className="relative z-10">Send Message</span>
                   </button>
                 </div>
-
+                {/* Success Message */}
+                {showSuccess && (
+                  <div className="mt-6 text-green-600 text-center font-semibold flex items-center justify-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Thank you! Your message has been sent.
+                  </div>
+                )}
                 {/* Privacy Notice */}
                 <div className="form-item">
                   <p className="text-sm text-gray-600 text-center leading-relaxed">
