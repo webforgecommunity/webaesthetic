@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Webasthetic Team" }],
   creator: "Webasthetic",
   publisher: "Webasthetic",
+  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "Webasthetic - Premium Web Development Agency",
     description: "Transform your digital presence with custom web solutions",
