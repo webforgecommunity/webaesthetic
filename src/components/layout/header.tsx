@@ -158,7 +158,7 @@ export default function Header() {
               <div className="pt-6 border-t border-gray-100 mt-6 space-y-4">
                 <div className="flex items-center space-x-3 px-6 py-3 text-gray-600 hover:text-blue-600 transition-colors duration-200 rounded-xl hover:bg-gray-50">
                   <Phone className="h-5 w-5 text-blue-600" />
-                  <span className="text-base font-medium">+1-234-567-890</span>
+                  <span className="text-base font-medium">+91 9216952323</span>
                 </div>
                 <Link 
                   href="/contact"
