@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Webasthetic Team" }],
   creator: "Webasthetic",
   publisher: "Webasthetic",
-  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "Webasthetic - Premium Web Development Agency",
     description: "Transform your digital presence with custom web solutions",
@@ -65,19 +63,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-J247NNNVC4"
-        strategy="afterInteractive"
-      />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-J247NNNVC4');
-        `}
-      </Script>
       <body
         className={`${inter.variable} ${poppins.variable} font-inter antialiased`}
         suppressHydrationWarning={true}
