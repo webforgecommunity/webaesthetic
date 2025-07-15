@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from 'next/script'
 import { ArrowRight, Code, Palette, Zap, CheckCircle, Smartphone, Globe, ShoppingCart, Search, Settings, Database, Monitor } from 'lucide-react'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
@@ -10,6 +11,19 @@ import AnimatedImage from '@/components/ui/AnimatedImage'
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-J247NNNVC4"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J247NNNVC4');
+        `}
+      </Script>
       <Header />
       
       {/* Hero Section */}
