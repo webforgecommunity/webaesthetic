@@ -11,19 +11,6 @@ import AnimatedImage from '@/components/ui/AnimatedImage'
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-J247NNNVC4"
-        strategy="afterInteractive"
-      />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-J247NNNVC4');
-        `}
-      </Script>
       <Header />
       
       {/* Hero Section */}
