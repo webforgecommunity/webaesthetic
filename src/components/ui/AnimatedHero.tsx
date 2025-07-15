@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { Star, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 interface AnimatedHeroProps {
