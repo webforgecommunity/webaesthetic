@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -22,15 +23,17 @@ export default function Header() {
       <div className="w-full max-w-7xl mx-auto px-0.5 sm:px-1 lg:px-1.5">
         <div className="flex items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group mr-12">
+          <Link href="/" className="flex items-center group mr-12">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
-                <span className="text-white font-bold text-lg">W</span>
-              </div>
+              <Image
+                src="/vercel.svg"
+                alt="Webasthetic Logo"
+                width={66}
+                height={66}
+                className="transform group-hover:scale-110 transition-all duration-300"
+                priority
+              />
             </div>
-            <span className="font-poppins font-bold text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-              Webasthetic
-            </span>
           </Link>
 
           {/* Desktop Navigation - Moved to Left */}
