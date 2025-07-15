@@ -23,6 +23,7 @@ import {
   MessageCircle,
   Zap
 } from 'lucide-react'
+import Image from 'next/image'
 
 // GSAP imports - using dynamic imports to avoid SSR issues
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -489,9 +490,11 @@ export default function About() {
             {technologies.map((tech) => (
               <div key={tech.name} className="group">
                 <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 aspect-square flex flex-col items-center justify-center group-hover:scale-110">
-                  <img 
+                  <Image 
                     src={tech.logo} 
                     alt={tech.name}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 object-contain mb-3 group-hover:scale-110 transition-transform duration-300"
                   />
                   <span className="text-sm font-medium text-gray-700 text-center group-hover:text-blue-600 transition-colors duration-300">
