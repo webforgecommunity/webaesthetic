@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Script from 'next/script'
 import { ArrowRight, Code, Palette, Zap, CheckCircle, Smartphone, Globe, ShoppingCart, Search, Settings, Database, Monitor } from 'lucide-react'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
