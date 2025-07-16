@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
-import { Monitor, Smartphone, ShoppingCart, Zap, ExternalLink, Github, Calendar, Users, Star, Filter, Grid3X3, ArrowRight, Play, TrendingUp, Database, Bot, Briefcase, ChevronDown, X } from 'lucide-react'
+import { Monitor, Smartphone, ShoppingCart, Zap, ExternalLink, Calendar, Users, Star, Filter, Grid3X3, Play, TrendingUp, Bot, Briefcase, ChevronDown, X } from 'lucide-react'
 
 // Check if we're in the browser before using GSAP
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,156 +24,148 @@ if (typeof window !== 'undefined') {
   }
 }
 
-// Enhanced portfolio data with more projects and categories
+// Real portfolio projects
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Revolution',
-    description: 'A next-generation e-commerce platform with AI-powered recommendations, real-time inventory management, and seamless multi-payment gateway integration.',
-    image: '/tech_logos/next.png',
-    tech: ['Next.js', 'Tailwind', 'Node.js', 'MongoDB', 'Stripe'],
+    title: 'Ooruni Foundation',
+    description: 'A comprehensive NGO website focused on environmental conservation, education, and equal opportunities. Features include donation management, project showcases, and community engagement tools.',
+    image: '/projects/oourni_foundation.png',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP'],
     techImages: ['/tech_logos/next.png', '/tech_logos/Tailwind.png', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
-    category: 'E-commerce',
+    category: 'Non-Profit',
     featured: true,
     status: 'Live',
-    duration: '6 months',
-    team: '8 members',
+    duration: '3 months',
+    team: '4 members',
     rating: 4.9,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    url: 'https://ooruni-nine.vercel.app/',
+    demoUrl: 'https://ooruni-nine.vercel.app/'
   },
   {
     id: 2,
-    title: 'FinTech Mobile Banking',
-    description: 'A secure, cross-platform mobile banking app with biometric authentication, instant transfers, and comprehensive financial analytics.',
-    image: '/tech_logos/Flutter.png',
-    tech: ['Flutter', 'Firebase', 'Android', 'iOS', 'Node.js'],
-    techImages: ['/tech_logos/Flutter.png', '/tech_logos/Firebase.jpg', '/tech_logos/Android.jpg', '/tech_logos/iOS.png'],
-    category: 'Mobile',
+    title: 'Currency Bridge',
+    description: 'A sophisticated cryptocurrency trading platform with real-time market data, secure wallet integration, and advanced trading features for digital asset management.',
+    image: '/projects/currencybridge.png',
+    tech: ['React', 'Node.js', 'MongoDB', 'WebSocket', 'Crypto APIs'],
+    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
+    category: 'FinTech',
     featured: true,
     status: 'Live',
-    duration: '8 months',
-    team: '12 members',
+    duration: '6 months',
+    team: '6 members',
     rating: 4.8,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    url: 'https://currencybridge.onrender.com/',
+    demoUrl: 'https://currencybridge.onrender.com/'
   },
   {
     id: 3,
-    title: 'AI Content Studio',
-    description: 'Revolutionary AI-powered content generation platform with natural language processing, automated SEO optimization, and multi-language support.',
-    image: '/tech_logos/Python.png',
-    tech: ['Python', 'React', 'AWS', 'TensorFlow', 'OpenAI'],
-    techImages: ['/tech_logos/Python.png', '/tech_logos/react.jpeg', '/tech_logos/AWS.jpg'],
-    category: 'AI/ML',
+    title: 'Raghav Tourism',
+    description: 'A comprehensive travel and tourism website offering tour packages, destination guides, booking management, and customer service for memorable travel experiences.',
+    image: '/projects/tourism_website.png',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Payment Gateway'],
+    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
+    category: 'Travel',
     featured: true,
-    status: 'Beta',
-    duration: '10 months',
-    team: '15 members',
+    status: 'Live',
+    duration: '4 months',
+    team: '5 members',
     rating: 4.7,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    url: 'https://raghavtourism.onrender.com/',
+    demoUrl: 'https://raghavtourism.onrender.com/'
   },
   {
     id: 4,
-    title: 'Enterprise SaaS Hub',
-    description: 'Comprehensive project management platform with advanced collaboration tools, real-time analytics, and seamless third-party integrations.',
-    image: '/tech_logos/Vue.jpeg',
-    tech: ['Vue.js', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
-    techImages: ['/tech_logos/Vue.jpeg', '/tech_logos/Node.jpeg', '/tech_logos/PostgreSQL.png', '/tech_logos/Docker.jpg'],
-    category: 'Web',
+    title: 'AlgoEase Trading Platform',
+    description: 'An automated cryptocurrency trading platform with algorithmic trading strategies, portfolio management, and real-time market analysis for professional traders.',
+    image: '/projects/algoease.png',
+    tech: ['Next.js', 'TypeScript', 'Web3', 'Solidity', 'Trading APIs'],
+    techImages: ['/tech_logos/next.png', '/tech_logos/react.jpeg', '/tech_logos/Node.jpeg'],
+    category: 'FinTech',
     featured: false,
     status: 'Live',
-    duration: '4 months',
-    team: '6 members',
+    duration: '8 months',
+    team: '8 members',
     rating: 4.6,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    url: 'https://algo-ease-an-automated-trading-platform.vercel.app/',
+    demoUrl: 'https://algo-ease-an-automated-trading-platform.vercel.app/'
   },
   {
     id: 5,
-    title: 'Smart IoT Dashboard',
-    description: 'Real-time IoT monitoring and control system with predictive analytics, automated alerts, and comprehensive device management.',
-    image: '/tech_logos/react.jpeg',
-    tech: ['React', 'Python', 'AWS', 'MongoDB', 'WebSocket'],
-    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Python.png', '/tech_logos/AWS.jpg', '/tech_logos/MongoDB.png'],
-    category: 'IoT',
+    title: 'Avon Production',
+    description: 'A professional production company website showcasing services, portfolio, and client testimonials for video production, photography, and creative content.',
+    image: '/projects/avonproduction.png',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP'],
+    techImages: ['/tech_logos/next.png', '/tech_logos/Tailwind.png'],
+    category: 'Creative',
     featured: false,
     status: 'Live',
-    duration: '5 months',
-    team: '10 members',
+    duration: '2 months',
+    team: '3 members',
     rating: 4.5,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    url: 'http://avonproduction.com',
+    demoUrl: 'http://avonproduction.com'
   },
   {
     id: 6,
-    title: 'Healthcare Management System',
-    description: 'Comprehensive healthcare platform with patient management, appointment scheduling, telemedicine capabilities, and HIPAA compliance.',
-    image: '/tech_logos/angular.png',
-    tech: ['Angular', 'Java', 'PostgreSQL', 'AWS', 'Docker'],
-    techImages: ['/tech_logos/angular.png', '/tech_logos/Java.png', '/tech_logos/PostgreSQL.png', '/tech_logos/AWS.jpg'],
-    category: 'Healthcare',
+    title: 'Breatho Sustainability',
+    description: 'An innovative environmental sustainability platform focused on campus green initiatives, AI-powered tree optimization, and comprehensive sustainability reporting.',
+    image: '/projects/breatho_website.png',
+    tech: ['React', 'Node.js', 'AI/ML', 'Python', 'Environmental APIs'],
+    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Python.png', '/tech_logos/Node.jpeg'],
+    category: 'Environmental',
     featured: false,
     status: 'Live',
-    duration: '12 months',
-    team: '20 members',
-    rating: 4.9,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    duration: '5 months',
+    team: '6 members',
+    rating: 4.8,
+    url: 'https://breatho-website.vercel.app/',
+    demoUrl: 'https://breatho-website.vercel.app/'
   },
   {
     id: 7,
-    title: 'Crypto Trading Platform',
-    description: 'Advanced cryptocurrency trading platform with real-time market data, algorithmic trading, and comprehensive portfolio management.',
-    image: '/tech_logos/next.png',
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'WebSocket'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/Node.jpeg', '/tech_logos/PostgreSQL.png'],
-    category: 'FinTech',
+    title: 'Web Bounty Security',
+    description: 'A cybersecurity platform for bug bounty programs, vulnerability assessments, and security research with comprehensive reporting and reward systems.',
+    image: '/projects/bugbounty.png',
+    tech: ['React', 'Node.js', 'Security APIs', 'MongoDB', 'JWT'],
+    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
+    category: 'Security',
     featured: false,
-    status: 'Development',
-    duration: '9 months',
-    team: '14 members',
+    status: 'Live',
+    duration: '4 months',
+    team: '5 members',
     rating: 4.4,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    url: 'https://webbounty.netlify.app/',
+    demoUrl: 'https://webbounty.netlify.app/'
   },
   {
     id: 8,
-    title: 'Social Media Analytics',
-    description: 'Powerful social media analytics platform with sentiment analysis, competitor tracking, and automated reporting for brands.',
-    image: '/tech_logos/Python.png',
-    tech: ['Python', 'React', 'MongoDB', 'AWS', 'TensorFlow'],
-    techImages: ['/tech_logos/Python.png', '/tech_logos/react.jpeg', '/tech_logos/MongoDB.png', '/tech_logos/AWS.jpg'],
-    category: 'Analytics',
+    title: 'GoCup Marketing',
+    description: 'A brand marketing platform for custom cup advertising, featuring design tools, order management, and brand visibility solutions for businesses.',
+    image: '/projects/gocup-website.png',
+    tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+    techImages: ['/tech_logos/next.png', '/tech_logos/Tailwind.png', '/tech_logos/MySQL.jpeg'],
+    category: 'Marketing',
     featured: false,
     status: 'Live',
-    duration: '7 months',
-    team: '9 members',
-    rating: 4.3,
-    url: '#',
-    github: '#',
-    demoUrl: '#'
+    duration: '3 months',
+    team: '4 members',
+    rating: 4.6,
+    url: 'https://everysip.arpitgarg.xyz/',
+    demoUrl: 'https://everysip.arpitgarg.xyz/'
   }
 ]
 
 const categories = [
   { name: 'All Projects', value: 'all', icon: Grid3X3, count: projects.length },
-  { name: 'Web Applications', value: 'Web', icon: Monitor, count: projects.filter(p => p.category === 'Web').length },
+  { name: 'Web Applications', value: 'Web', icon: Monitor, count: projects.filter(p => ['Web', 'Non-Profit', 'Travel', 'Creative', 'Environmental', 'Marketing'].includes(p.category)).length },
+  { name: 'FinTech', value: 'FinTech', icon: TrendingUp, count: projects.filter(p => p.category === 'FinTech').length },
   { name: 'E-commerce', value: 'E-commerce', icon: ShoppingCart, count: projects.filter(p => p.category === 'E-commerce').length },
   { name: 'Mobile Apps', value: 'Mobile', icon: Smartphone, count: projects.filter(p => p.category === 'Mobile').length },
   { name: 'AI & ML', value: 'AI/ML', icon: Bot, count: projects.filter(p => p.category === 'AI/ML').length },
-  { name: 'FinTech', value: 'FinTech', icon: TrendingUp, count: projects.filter(p => p.category === 'FinTech').length },
-  { name: 'Healthcare', value: 'Healthcare', icon: Users, count: projects.filter(p => p.category === 'Healthcare').length },
-  { name: 'IoT Solutions', value: 'IoT', icon: Zap, count: projects.filter(p => p.category === 'IoT').length },
-  { name: 'Analytics', value: 'Analytics', icon: Database, count: projects.filter(p => p.category === 'Analytics').length }
+  { name: 'Security', value: 'Security', icon: Users, count: projects.filter(p => p.category === 'Security').length },
+  { name: 'Non-Profit', value: 'Non-Profit', icon: Users, count: projects.filter(p => p.category === 'Non-Profit').length },
+  { name: 'Environmental', value: 'Environmental', icon: Zap, count: projects.filter(p => p.category === 'Environmental').length }
 ]
 
 export default function Portfolio() {
@@ -525,16 +517,16 @@ export default function Portfolio() {
             {/* Stats Section */}
             <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-2">10+</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">8+</div>
                 <div className="text-sm text-gray-600">Projects Completed</div>
               </div>
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
-                <div className="text-3xl font-bold text-purple-600 mb-2">10</div>
+                <div className="text-3xl font-bold text-purple-600 mb-2">8</div>
                 <div className="text-sm text-gray-600">Industries Served</div>
               </div>
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
-                <div className="text-3xl font-bold text-green-600 mb-2">98%</div>
-                <div className="text-sm text-gray-600">Client Satisfaction</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+                <div className="text-sm text-gray-600">Project Success Rate</div>
               </div>
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
                 <div className="text-3xl font-bold text-orange-600 mb-2">24/7</div>
@@ -730,43 +722,47 @@ export default function Portfolio() {
                 <div className={`relative overflow-hidden ${
                   viewMode === 'list' ? 'sm:w-80 flex-shrink-0' : ''
                 }`}>
-                  <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
-                    {/* Primary Tech Logo */}
+                  <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 relative group-hover:scale-105 transition-transform duration-500">
+                    {/* Full Banner Image */}
                     <Image 
                       src={project.image} 
                       alt={project.title} 
-                      width={80} 
-                      height={80} 
-                      className="rounded-2xl shadow-lg object-cover z-10"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     
-                    {/* Tech Stack Icons */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="grid grid-cols-2 gap-4 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
-                        {project.techImages.slice(0, 4).map((img, i) => (
+                    {/* Overlay for better text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-black/20"></div>
+                    
+                    {/* Tech Stack Icons - Bottom Left */}
+                    <div className="absolute bottom-4 left-4 flex gap-2 z-10">
+                      {project.techImages.slice(0, 3).map((img, i) => (
+                        <div key={i} className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-lg p-1.5 shadow-lg">
                           <Image 
-                            key={i}
                             src={img} 
                             alt="" 
-                            width={32} 
-                            height={32} 
-                            className="rounded-lg"
+                            width={20} 
+                            height={20} 
+                            className="rounded-sm object-cover"
                           />
-                        ))}
-                      </div>
+                        </div>
+                      ))}
+                      {project.techImages.length > 3 && (
+                        <div className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg">
+                          <span className="text-xs font-medium text-gray-600">+{project.techImages.length - 3}</span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                      <div className="flex gap-2">
-                        <a href={project.demoUrl} className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
-                          <Play className="w-4 h-4" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                      <div className="flex gap-3">
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors shadow-lg">
+                          <ExternalLink className="w-5 h-5" />
                         </a>
-                        <a href={project.github} className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
-                          <Github className="w-4 h-4" />
-                        </a>
-                        <a href={project.url} className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
-                          <ExternalLink className="w-4 h-4" />
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors shadow-lg">
+                          <Play className="w-5 h-5" />
                         </a>
                       </div>
                     </div>
@@ -823,16 +819,12 @@ export default function Portfolio() {
                   <div className="flex gap-3">
                     <a 
                       href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2.5 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                     >
-                      View Project
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
-                    <a 
-                      href={project.github}
-                      className="px-4 py-2.5 rounded-xl font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center"
-                    >
-                      <Github className="w-4 h-4" />
+                      View Live Project
+                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
