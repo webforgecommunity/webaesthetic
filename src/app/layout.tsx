@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import LaunchOfferBanner from "@/components/ui/LaunchOfferBanner";
+import LaunchOfferStrip from "@/components/ui/LaunchOfferStrip";
+import FloatingOfferPopup from "@/components/ui/FloatingOfferPopup";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -84,7 +87,10 @@ export default function RootLayout({
         className={`${inter.variable} ${poppins.variable} font-inter antialiased`}
         suppressHydrationWarning={true}
       >
+        <LaunchOfferBanner />
+        <LaunchOfferStrip />
         {children}
+        <FloatingOfferPopup />
       </body>
     </html>
   );

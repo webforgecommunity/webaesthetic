@@ -6,6 +6,7 @@ import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import AnimatedHero from '@/components/ui/AnimatedHero'
 import AnimatedImage from '@/components/ui/AnimatedImage'
+import LaunchOfferCard from '@/components/ui/LaunchOfferCard'
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-20 sm:pt-24 md:pt-28 pb-16 sm:pb-20 overflow-hidden">
+      <section className="relative pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20 overflow-hidden">
         {/* Background with gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50"></div>
         
@@ -150,6 +151,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Launch Offer Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+        <LaunchOfferCard />
+      </div>
 
       {/* Services Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden border-t border-gray-100">
