@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
@@ -6,8 +6,6 @@ import Link from 'next/link'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import { 
-  Smartphone, 
-  ShoppingCart, 
   Search, 
   Shield, 
   Code, 
@@ -20,7 +18,9 @@ import {
   Sparkles,
   Target,
   Rocket,
-  Award
+  Award,
+  Smartphone,
+  ShoppingCart
 } from 'lucide-react'
 
 // Check if we're in the browser before using GSAP
@@ -41,216 +41,14 @@ if (typeof window !== 'undefined') {
   }
 }
 
-// Services data with comprehensive information
-const services = [
-  {
-    id: 1,
-    title: 'Web Development',
-    subtitle: 'Full-Stack Solutions',
-    description: 'We create powerful, scalable web applications using cutting-edge technologies like React, Next.js, and Node.js. From concept to deployment, we handle everything.',
-    slug: 'web-development',
-    icon: Code,
-    image: '/tech_logos/react.jpeg',
-    features: ['Custom Web Applications', 'Progressive Web Apps', 'API Development', 'Database Design'],
-    technologies: ['React', 'Next.js', 'Node.js', 'TypeScript'],
-    techImages: ['/tech_logos/react.jpeg', '/tech_logos/next.png', '/tech_logos/Node.jpeg'],
-    price: 'Starting from $2,999',
-    timeline: '4-8 weeks',
-    gradient: 'from-blue-500 to-cyan-500',
-    bgGradient: 'from-blue-50 to-cyan-50',
-    category: 'Development'
-  },
-  {
-    id: 2,
-    title: 'Mobile App Development',
-    subtitle: 'Cross-Platform Excellence',
-    description: 'Native-quality mobile apps for iOS and Android using React Native and Flutter. Reach your audience wherever they are with seamless user experiences.',
-    slug: 'mobile-app-development',
-    icon: Smartphone,
-    image: '/tech_logos/Flutter.png',
-    features: ['Cross-Platform Apps', 'Native Performance', 'App Store Optimization', 'Push Notifications'],
-    technologies: ['React Native', 'Flutter', 'Firebase', 'Swift'],
-    techImages: ['/tech_logos/React Native.png', '/tech_logos/Flutter.png', '/tech_logos/Firebase.jpg'],
-    price: 'Starting from $4,999',
-    timeline: '6-12 weeks',
-    gradient: 'from-purple-500 to-pink-500',
-    bgGradient: 'from-purple-50 to-pink-50',
-    category: 'Mobile'
-  },
-  {
-    id: 3,
-    title: 'E-Commerce Solutions',
-    subtitle: 'Online Store Excellence',
-    description: 'Complete e-commerce platforms with payment integration, inventory management, and analytics. Turn your products into profit with our proven solutions.',
-    slug: 'e-commerce-solutions',
-    icon: ShoppingCart,
-    image: '/tech_logos/next.png',
-    features: ['Payment Gateway Integration', 'Inventory Management', 'Order Tracking', 'Multi-vendor Support'],
-    technologies: ['Next.js', 'Stripe', 'MongoDB', 'AWS'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/MongoDB.png', '/tech_logos/AWS.jpg'],
-    price: 'Starting from $3,999',
-    timeline: '6-10 weeks',
-    gradient: 'from-green-500 to-emerald-500',
-    bgGradient: 'from-green-50 to-emerald-50',
-    category: 'E-commerce'
-  },
-  {
-    id: 4,
-    title: 'UI/UX Design',
-    subtitle: 'Beautiful & Functional',
-    description: 'User-centered design that combines aesthetics with functionality. We create interfaces that users love and convert visitors into customers.',
-    slug: 'ui-ux-design',
-    icon: Palette,
-    image: '/tech_logos/react.jpeg',
-    features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-    technologies: ['Figma', 'Adobe XD', 'Sketch', 'Principle'],
-    techImages: ['/tech_logos/react.jpeg', '/tech_logos/next.png'],
-    price: 'Starting from $1,999',
-    timeline: '3-6 weeks',
-    gradient: 'from-orange-500 to-red-500',
-    bgGradient: 'from-orange-50 to-red-50',
-    category: 'Design'
-  },
-  {
-    id: 5,
-    title: 'SEO Optimization',
-    subtitle: 'Search Engine Mastery',
-    description: 'Boost your online visibility with our proven SEO strategies. We optimize your website to rank higher and attract more qualified traffic.',
-    slug: 'seo-optimization',
-    icon: Search,
-    image: '/tech_logos/Google Cloud.jpeg',
-    features: ['Keyword Research', 'On-Page SEO', 'Technical SEO', 'Content Strategy'],
-    technologies: ['Google Analytics', 'Search Console', 'SEMrush', 'Ahrefs'],
-    techImages: ['/tech_logos/Google Cloud.jpeg'],
-    price: 'Starting from $999/month',
-    timeline: '3-6 months',
-    gradient: 'from-indigo-500 to-purple-500',
-    bgGradient: 'from-indigo-50 to-purple-50',
-    category: 'Marketing'
-  },
-  {
-    id: 6,
-    title: 'Shopify Development',
-    subtitle: 'E-commerce Excellence',
-    description: 'Custom Shopify stores with advanced features, themes, and integrations. From setup to optimization, we create stores that convert.',
-    slug: 'shopify-development',
-    icon: ShoppingCart,
-    image: '/tech_logos/next.png',
-    features: ['Custom Shopify Themes', 'App Development', 'Payment Integration', 'Store Optimization'],
-    technologies: ['Shopify', 'Liquid', 'JavaScript', 'React'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/react.jpeg'],
-    price: 'Starting from $2,499',
-    timeline: '3-6 weeks',
-    gradient: 'from-green-500 to-teal-500',
-    bgGradient: 'from-green-50 to-teal-50',
-    category: 'E-commerce'
-  },
-  {
-    id: 7,
-    title: 'WordPress Development',
-    subtitle: 'CMS Solutions',
-    description: 'Professional WordPress websites with custom themes, plugins, and functionality. Secure, fast, and easy to manage.',
-    slug: 'wordpress-development',
-    icon: Code,
-    image: '/tech_logos/PHP.png',
-    features: ['Custom Themes', 'Plugin Development', 'SEO Optimization', 'Security Setup'],
-    technologies: ['WordPress', 'PHP', 'MySQL', 'JavaScript'],
-    techImages: ['/tech_logos/PHP.png', '/tech_logos/MySQL.jpeg'],
-    price: 'Starting from $1,799',
-    timeline: '2-5 weeks',
-    gradient: 'from-blue-500 to-purple-500',
-    bgGradient: 'from-blue-50 to-purple-50',
-    category: 'CMS'
-  },
-  {
-    id: 8,
-    title: 'API Development',
-    subtitle: 'Backend Excellence',
-    description: 'Robust RESTful and GraphQL APIs that power your applications. Secure, scalable, and well-documented backend solutions for any platform.',
-    slug: 'api-development',
-    icon: Code,
-    image: '/tech_logos/Node.jpeg',
-    features: ['REST & GraphQL APIs', 'Database Integration', 'Authentication & Security', 'API Documentation'],
-    technologies: ['Node.js', 'Express', 'GraphQL', 'MongoDB'],
-    techImages: ['/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
-    price: 'Starting from $2,499',
-    timeline: '3-6 weeks',
-    gradient: 'from-teal-500 to-green-500',
-    bgGradient: 'from-teal-50 to-green-50',
-    category: 'Backend'
-  },
-  {
-    id: 9,
-    title: 'DevOps & Automation',
-    subtitle: 'Streamlined Operations',
-    description: 'Automate your deployment pipelines, monitoring, and infrastructure. Increase productivity and reduce downtime with modern DevOps practices.',
-    slug: 'devops-automation',
-    icon: Rocket,
-    image: '/tech_logos/Docker.jpg',
-    features: ['CI/CD Pipelines', 'Infrastructure as Code', 'Monitoring & Alerts', 'Performance Optimization'],
-    technologies: ['Docker', 'Kubernetes', 'GitHub Actions', 'Terraform'],
-    techImages: ['/tech_logos/Docker.jpg', '/tech_logos/Kubernetes.jpg'],
-    price: 'Starting from $1,999',
-    timeline: '2-5 weeks',
-    gradient: 'from-violet-500 to-purple-500',
-    bgGradient: 'from-violet-50 to-purple-50',
-    category: 'Operations'
-  },
-  {
-    id: 10,
-    title: 'AI & Machine Learning',
-    subtitle: 'Intelligent Solutions',
-    description: 'Leverage AI and ML to automate processes, gain insights, and create intelligent features. From chatbots to predictive analytics.',
-    slug: 'ai-machine-learning',
-    icon: Sparkles,
-    image: '/tech_logos/Python.png',
-    features: ['Chatbots & AI Assistants', 'Predictive Analytics', 'Computer Vision', 'Natural Language Processing'],
-    technologies: ['Python', 'TensorFlow', 'OpenAI', 'Hugging Face'],
-    techImages: ['/tech_logos/Python.png'],
-    price: 'Starting from $4,999',
-    timeline: '8-16 weeks',
-    gradient: 'from-rose-500 to-pink-500',
-    bgGradient: 'from-rose-50 to-pink-50',
-    category: 'AI/ML'
-  },
-  {
-    id: 11,
-    title: 'CMS Development',
-    subtitle: 'Content Management',
-    description: 'Custom content management systems that give you full control over your content. Easy to use interfaces with powerful admin capabilities.',
-    slug: 'cms-development',
-    icon: Palette,
-    image: '/tech_logos/next.png',
-    features: ['Custom CMS', 'Content Workflow', 'Multi-user Access', 'Media Management'],
-    technologies: ['Next.js', 'Sanity', 'Strapi', 'MongoDB'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/MongoDB.png'],
-    price: 'Starting from $2,799',
-    timeline: '4-8 weeks',
-    gradient: 'from-amber-500 to-orange-500',
-    bgGradient: 'from-amber-50 to-orange-50',
-    category: 'Content'
-  },
-  {
-    id: 12,
-    title: 'Database Design',
-    subtitle: 'Data Architecture',
-    description: 'Optimize your data storage and retrieval with expertly designed databases. From SQL to NoSQL, we ensure performance and scalability.',
-    slug: 'database-design',
-    icon: Shield,
-    image: '/tech_logos/PostgreSQL.png',
-    features: ['Database Architecture', 'Performance Optimization', 'Data Migration', 'Backup Strategies'],
-    technologies: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis'],
-    techImages: ['/tech_logos/PostgreSQL.png', '/tech_logos/MongoDB.png', '/tech_logos/MySQL.jpeg'],
-    price: 'Starting from $1,799',
-    timeline: '2-4 weeks',
-    gradient: 'from-emerald-500 to-teal-500',
-    bgGradient: 'from-emerald-50 to-teal-50',
-    category: 'Database'
-  }
-]
+// Dynamic services from API
+type ApiService = { name: string; slug: string; description?: string; icon?: string; iconImageUrl?: string; subtitle?: string; image?: string; features?: string[]; technologies?: string[]; techImages?: string[]; price?: string; timeline?: string; gradient?: string; bgGradient?: string; category?: string }
 
 export default function Services() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [apiServices, setApiServices] = useState<ApiService[] | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   
   // Refs for animations
   const heroTitleRef = useRef<HTMLHeadingElement | null>(null)
@@ -405,6 +203,36 @@ export default function Services() {
       }
     }
   }, [])
+
+  // Load services from API on mount
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch('/api/services', { cache: 'no-store' })
+        const json = await res.json()
+        setApiServices(json?.data || [])
+  } catch {
+        setError('Failed to load services')
+      } finally {
+        setLoading(false)
+      }
+    }
+    load()
+  }, [])
+
+  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    code: Code,
+    smartphone: Smartphone,
+    shoppingcart: ShoppingCart,
+    palette: Palette,
+    search: Search,
+    rocket: Rocket,
+    shield: Shield,
+    sparkles: Sparkles,
+    cloud: Cloud,
+    users: Users,
+    award: Award,
+  }
 
   // 3D Card hover effect
   useEffect(() => {
@@ -590,27 +418,35 @@ export default function Services() {
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-            {services.map((service, idx) => {
-              const Icon = service.icon
+            {(apiServices || []).map((service, idx) => {
+              const Icon = iconMap[(service.icon || '').toLowerCase()] || Code
+              const category = service.category || 'Service'
+              const gradient = service.gradient || 'from-blue-500 to-purple-500'
+              const bgGradient = service.bgGradient || 'from-blue-50 to-purple-50'
+              const features = service.features && service.features.length ? service.features : (service.description ? [service.description] : [])
               return (
                 <div
-                  key={service.id}
+                  key={service.slug}
                   ref={el => { serviceCardsRef.current[idx] = el }}
                   className={`group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gray-200 overflow-hidden ${
                     hoveredCard === idx ? 'z-10' : ''
                   }`}
                 >
                   {/* Card Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
                   
                   {/* Service Icon & Header */}
                   <div className="relative p-6 sm:p-8">
                     <div className="flex items-start justify-between mb-6">
-                      <div className={`p-4 rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110`}>
-                        <Icon className="w-8 h-8 text-white" />
+                      <div className={`relative rounded-2xl bg-gradient-to-br ${gradient} shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 overflow-hidden w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center`}>
+                        {service.iconImageUrl ? (
+                          <Image src={service.iconImageUrl} alt={service.name} fill sizes="64px" className="object-cover" />
+                        ) : (
+                          <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                        )}
                       </div>
                       <div className="text-right">
-                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">{service.category}</div>
+                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">{category}</div>
                         <div className="flex items-center gap-1 mt-1">                        {[...Array(5)].map((_, idx) => (
                           <Star key={idx} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                         ))}
@@ -620,69 +456,59 @@ export default function Services() {
 
                     {/* Service Title */}
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors">
-                      {service.title}
+                      {service.name}
                     </h3>
-                    <p className="text-sm font-medium text-gray-500 mb-4">{service.subtitle}</p>
+                    <p className="text-sm font-medium text-gray-500 mb-4">{service.subtitle || service.slug}</p>
 
-                    {/* Service Description */}
-                    <p className="text-gray-600 leading-relaxed mb-6">
-                      {service.description}
-                    </p>
 
                     {/* Key Features */}
-                    <div className="space-y-2 mb-6">
-                      {service.features.map((feature, i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-700">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
+                    {!!features.length && (
+                      <div className="space-y-2 mb-6">
+                        {features.map((feature, i) => (
+                          <div key={i} className="flex items-center gap-3">
+                            <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                            <span className="text-sm text-gray-700">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
                     {/* Tech Stack */}
-                    <div className="mb-6">
-                      <div className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-3">Technologies</div>
-                      <div className="flex items-center gap-2 mb-3">
-                        {service.techImages.slice(0, 3).map((img, idx) => (
-                          <Image 
-                            key={idx}
-                            src={img} 
-                            alt="" 
-                            width={24} 
-                            height={24} 
-                            className="rounded-lg shadow-sm"
-                          />
-                        ))}
-                        {service.technologies.length > 3 && (
-                          <div className="text-xs text-gray-500">+{service.technologies.length - 3}</div>
-                        )}
+                    {service.technologies?.length ? (
+                      <div className="mb-6">
+                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-3">Technologies</div>
+                        <div className="flex items-center gap-2 mb-3">
+                          {(service.techImages || []).slice(0, 3).map((img, idx) => (
+                            <Image key={idx} src={img} alt="" width={24} height={24} className="rounded-lg shadow-sm" />
+                          ))}
+                          {service.technologies.length > 3 && (
+                            <div className="text-xs text-gray-500">+{service.technologies.length - 3}</div>
+                          )}
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-1">
-                        {service.technologies.slice(0, 4).map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    ) : null}
 
                     {/* Service Info */}
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="text-center p-3 bg-gray-50 rounded-xl">
                         <div className="text-xs text-gray-500 mb-1">Category</div>
-                        <div className="font-bold text-gray-900">{service.category}</div>
+                        <div className="font-bold text-gray-900">{category}</div>
                       </div>
-                      <div className="text-center p-3 bg-gray-50 rounded-xl">
-                        <div className="text-xs text-gray-500 mb-1">Timeline</div>
-                        <div className="font-bold text-gray-900">{service.timeline}</div>
-                      </div>
+                      {service.timeline ? (
+                        <div className="text-center p-3 bg-gray-50 rounded-xl">
+                          <div className="text-xs text-gray-500 mb-1">Timeline</div>
+                          <div className="font-bold text-gray-900">{service.timeline}</div>
+                        </div>
+                      ) : (
+                        <div className="text-center p-3 bg-gray-50 rounded-xl">
+                          <div className="text-xs text-gray-500 mb-1">Price</div>
+                          <div className="font-bold text-gray-900">{service.price || '—'}</div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Learn More Button */}
-                    <Link href={`/services/${service.slug}`} className={`w-full bg-gradient-to-r ${service.gradient} text-white px-4 sm:px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm sm:text-base`}>
+                    <Link href={`/services/${service.slug}`} className={`w-full bg-gradient-to-r ${gradient} text-white px-4 sm:px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm sm:text-base`}>
                       Learn More
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
@@ -693,6 +519,15 @@ export default function Services() {
                 </div>
               )
             })}
+            {loading && (
+              <div className="col-span-full text-center text-sm text-gray-500">Loading services…</div>
+            )}
+            {!loading && apiServices && apiServices.length === 0 && (
+              <div className="col-span-full text-center text-sm text-gray-500">No services yet. Add some from the Admin.</div>
+            )}
+            {error && (
+              <div className="col-span-full text-center text-sm text-red-500">{error}</div>
+            )}
           </div>
         </div>
       </section>

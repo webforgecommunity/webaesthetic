@@ -1,0 +1,72 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: webaesthetic-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-example}
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - webnet
+
+  mongo-express:
+    image: mongo-express:1
+    container_name: webaesthetic-mongo-express
+    restart: unless-stopped
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-example}
+      ME_CONFIG_MONGODB_URL: mongodb://${MONGO_INITDB_ROOT_USERNAME:-root}:${MONGO_INITDB_ROOT_PASSWORD:-example}@mongo:27017/
+      ME_CONFIG_BASICAUTH: "false"
+    depends_on:
+      - mongo
+    networks:
+      - webnet
+
+  # Optional analytics; expose behind a reverse proxy in production
+  ackee:
+    image: electerious/ackee:latest
+    container_name: webaesthetic-ackee
+    restart: unless-stopped
+    environment:
+      - ACKEE_MONGODB=mongodb://${MONGO_INITDB_ROOT_USERNAME:-root}:${MONGO_INITDB_ROOT_PASSWORD:-example}@mongo:27017/ackee?authSource=admin
+      - ACKEE_USERNAME=${ACKEE_USERNAME:-admin}
+      - ACKEE_PASSWORD=${ACKEE_PASSWORD:-changeme}
+      - ACKEE_ALLOW_ORIGIN=*
+      - ACKEE_DEMO=false
+    networks:
+      - webnet
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: webaesthetic-web
+    restart: unless-stopped
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb://${MONGO_INITDB_ROOT_USERNAME:-root}:${MONGO_INITDB_ROOT_PASSWORD:-example}@mongo:27017/webaesthetic?authSource=admin
+      # IMPORTANT: For production, set this to your public URL, e.g. https://example.com
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}
+      # If you use Ackee publicly, set this to a public URL (e.g., https://analytics.example.com)
+      # and put your reverse proxy in front of the ackee service below
+      # - NEXT_PUBLIC_ACKEE_SERVER=https://analytics.example.com
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    networks:
+      - webnet
+
+volumes:
+  mongo_data:
+
+networks:
+  webnet:
+    driver: bridge

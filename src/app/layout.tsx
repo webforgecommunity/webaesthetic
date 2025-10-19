@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Webasthetic",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Webasthetic - Premium Web Development Agency",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Webasthetic - Premium Web Development Agency",
     description: "Transform your digital presence with custom web solutions",
-    images: ["/og-image.jpg"],
+  images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -65,6 +65,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const ackeeServer = process.env.NEXT_PUBLIC_ACKEE_SERVER
+  const ackeeDomainId = process.env.NEXT_PUBLIC_ACKEE_DOMAIN_ID
   return (
     <html lang="en">
       <head>
@@ -83,6 +85,14 @@ export default function RootLayout({
           gtag('config', 'G-J247NNNVC4');
         `}
       </Script>
+      {ackeeServer && ackeeDomainId ? (
+        <Script
+          src={`${ackeeServer}/tracker.js`}
+          data-ackee-server={ackeeServer}
+          data-ackee-domain-id={ackeeDomainId}
+          strategy="afterInteractive"
+        />
+      ) : null}
       <body
         className={`${inter.variable} ${poppins.variable} font-inter antialiased`}
         suppressHydrationWarning={true}

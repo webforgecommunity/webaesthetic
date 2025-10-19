@@ -1,9 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { X, Gift, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 export default function FloatingOfferPopup() {
+  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -15,6 +17,7 @@ export default function FloatingOfferPopup() {
   }, [])
 
   if (!isVisible) return null
+  if (pathname?.startsWith('/admin')) return null
 
   return (
     <div className="fixed bottom-6 right-6 z-50 max-w-sm">

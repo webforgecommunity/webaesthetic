@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
-import { Monitor, Smartphone, ShoppingCart, Zap, ExternalLink, Calendar, Users, Star, Filter, Grid3X3, Play, TrendingUp, Bot, Briefcase, ChevronDown, X } from 'lucide-react'
+import { ExternalLink, Filter, Grid3X3, Briefcase, ChevronDown, X, Star } from 'lucide-react'
 
 // Check if we're in the browser before using GSAP
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,153 +24,31 @@ if (typeof window !== 'undefined') {
   }
 }
 
-// Real portfolio projects
-const projects = [
-  {
-    id: 1,
-    title: 'Ooruni Foundation',
-    description: 'A comprehensive NGO website focused on environmental conservation, education, and equal opportunities. Features include donation management, project showcases, and community engagement tools.',
-    image: '/projects/oourni_foundation.png',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/Tailwind.png', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
-    category: 'Non-Profit',
-    featured: true,
-    status: 'Live',
-    duration: '3 months',
-    team: '4 members',
-    rating: 4.9,
-    url: 'https://ooruni-nine.vercel.app/',
-    demoUrl: 'https://ooruni-nine.vercel.app/'
-  },
-  {
-    id: 2,
-    title: 'Currency Bridge',
-    description: 'A sophisticated cryptocurrency trading platform with real-time market data, secure wallet integration, and advanced trading features for digital asset management.',
-    image: '/projects/currencybridge.png',
-    tech: ['React', 'Node.js', 'MongoDB', 'WebSocket', 'Crypto APIs'],
-    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
-    category: 'FinTech',
-    featured: true,
-    status: 'Live',
-    duration: '6 months',
-    team: '6 members',
-    rating: 4.8,
-    url: 'https://currencybridge.onrender.com/',
-    demoUrl: 'https://currencybridge.onrender.com/'
-  },
-  {
-    id: 3,
-    title: 'Raghav Tourism',
-    description: 'A comprehensive travel and tourism website offering tour packages, destination guides, booking management, and customer service for memorable travel experiences.',
-    image: '/projects/tourism_website.png',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Payment Gateway'],
-    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
-    category: 'Travel',
-    featured: true,
-    status: 'Live',
-    duration: '4 months',
-    team: '5 members',
-    rating: 4.7,
-    url: 'https://raghavtourism.onrender.com/',
-    demoUrl: 'https://raghavtourism.onrender.com/'
-  },
-  {
-    id: 4,
-    title: 'AlgoEase Trading Platform',
-    description: 'An automated cryptocurrency trading platform with algorithmic trading strategies, portfolio management, and real-time market analysis for professional traders.',
-    image: '/projects/algoease.png',
-    tech: ['Next.js', 'TypeScript', 'Web3', 'Solidity', 'Trading APIs'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/react.jpeg', '/tech_logos/Node.jpeg'],
-    category: 'FinTech',
-    featured: false,
-    status: 'Live',
-    duration: '8 months',
-    team: '8 members',
-    rating: 4.6,
-    url: 'https://algo-ease-an-automated-trading-platform.vercel.app/',
-    demoUrl: 'https://algo-ease-an-automated-trading-platform.vercel.app/'
-  },
-  {
-    id: 5,
-    title: 'Avon Production',
-    description: 'A professional production company website showcasing services, portfolio, and client testimonials for video production, photography, and creative content.',
-    image: '/projects/avonproduction.png',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/Tailwind.png'],
-    category: 'Creative',
-    featured: false,
-    status: 'Live',
-    duration: '2 months',
-    team: '3 members',
-    rating: 4.5,
-    url: 'http://avonproduction.com',
-    demoUrl: 'http://avonproduction.com'
-  },
-  {
-    id: 6,
-    title: 'Breatho Sustainability',
-    description: 'An innovative environmental sustainability platform focused on campus green initiatives, AI-powered tree optimization, and comprehensive sustainability reporting.',
-    image: '/projects/breatho_website.png',
-    tech: ['React', 'Node.js', 'AI/ML', 'Python', 'Environmental APIs'],
-    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Python.png', '/tech_logos/Node.jpeg'],
-    category: 'Environmental',
-    featured: false,
-    status: 'Live',
-    duration: '5 months',
-    team: '6 members',
-    rating: 4.8,
-    url: 'https://breatho-website.vercel.app/',
-    demoUrl: 'https://breatho-website.vercel.app/'
-  },
-  {
-    id: 7,
-    title: 'Web Bounty Security',
-    description: 'A cybersecurity platform for bug bounty programs, vulnerability assessments, and security research with comprehensive reporting and reward systems.',
-    image: '/projects/bugbounty.png',
-    tech: ['React', 'Node.js', 'Security APIs', 'MongoDB', 'JWT'],
-    techImages: ['/tech_logos/react.jpeg', '/tech_logos/Node.jpeg', '/tech_logos/MongoDB.png'],
-    category: 'Security',
-    featured: false,
-    status: 'Live',
-    duration: '4 months',
-    team: '5 members',
-    rating: 4.4,
-    url: 'https://webbounty.netlify.app/',
-    demoUrl: 'https://webbounty.netlify.app/'
-  },
-  {
-    id: 8,
-    title: 'GoCup Marketing',
-    description: 'A brand marketing platform for custom cup advertising, featuring design tools, order management, and brand visibility solutions for businesses.',
-    image: '/projects/gocup-website.png',
-    tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-    techImages: ['/tech_logos/next.png', '/tech_logos/Tailwind.png', '/tech_logos/MySQL.jpeg'],
-    category: 'Marketing',
-    featured: false,
-    status: 'Live',
-    duration: '3 months',
-    team: '4 members',
-    rating: 4.6,
-    url: 'https://everysip.arpitgarg.xyz/',
-    demoUrl: 'https://everysip.arpitgarg.xyz/'
-  }
-]
+// Types for API data
+type ApiProject = { title: string; slug: string; description?: string; imageUrl?: string; serviceSlugs: string[]; links?: { label: string; url: string }[]; featured?: boolean; status?: string; techImages?: string[] }
+type ApiService = { name: string; slug: string }
 
-const categories = [
-  { name: 'All Projects', value: 'all', icon: Grid3X3, count: projects.length },
-  { name: 'Web Applications', value: 'Web', icon: Monitor, count: projects.filter(p => ['Web', 'Non-Profit', 'Travel', 'Creative', 'Environmental', 'Marketing'].includes(p.category)).length },
-  { name: 'FinTech', value: 'FinTech', icon: TrendingUp, count: projects.filter(p => p.category === 'FinTech').length },
-  { name: 'E-commerce', value: 'E-commerce', icon: ShoppingCart, count: projects.filter(p => p.category === 'E-commerce').length },
-  { name: 'Mobile Apps', value: 'Mobile', icon: Smartphone, count: projects.filter(p => p.category === 'Mobile').length },
-  { name: 'AI & ML', value: 'AI/ML', icon: Bot, count: projects.filter(p => p.category === 'AI/ML').length },
-  { name: 'Security', value: 'Security', icon: Users, count: projects.filter(p => p.category === 'Security').length },
-  { name: 'Non-Profit', value: 'Non-Profit', icon: Users, count: projects.filter(p => p.category === 'Non-Profit').length },
-  { name: 'Environmental', value: 'Environmental', icon: Zap, count: projects.filter(p => p.category === 'Environmental').length }
-]
+function makeCategories(services: ApiService[], projects: ApiProject[]) {
+  const all = { name: 'All Projects', value: 'all', icon: Grid3X3, count: projects.length }
+  const perService = services.map(s => ({
+    name: s.name,
+    value: s.slug,
+    icon: Briefcase,
+    count: projects.filter(p => p.serviceSlugs.includes(s.slug)).length,
+  }))
+  return [all, ...perService]
+}
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('all')
-  const [filteredProjects, setFilteredProjects] = useState(projects)
+  const [projects, setProjects] = useState<ApiProject[]>([])
+  const [services, setServices] = useState<ApiService[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const filteredProjects = useMemo(() => {
+    if (activeCategory === 'all') return projects
+    return projects.filter(p => p.serviceSlugs.includes(activeCategory))
+  }, [projects, activeCategory])
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   
@@ -189,14 +67,24 @@ export default function Portfolio() {
   const heroWordRefs = useRef<(HTMLSpanElement | null)[]>([])
   const filterDropdownRef = useRef<HTMLDivElement | null>(null)
 
-  // Filter projects based on category
+  // Load projects/services
   useEffect(() => {
-    if (activeCategory === 'all') {
-      setFilteredProjects(projects)
-    } else {
-      setFilteredProjects(projects.filter(project => project.category === activeCategory))
+    async function load() {
+      try {
+        const [p, s] = await Promise.all([
+          fetch('/api/projects', { cache: 'no-store' }).then(r => r.json()),
+          fetch('/api/services', { cache: 'no-store' }).then(r => r.json()),
+        ])
+        setProjects(p?.data || [])
+        setServices(s?.data || [])
+      } catch {
+        setError('Failed to load portfolio')
+      } finally {
+        setLoading(false)
+      }
     }
-  }, [activeCategory])
+    load()
+  }, [])
 
   // Close filter dropdown when clicking outside
   useEffect(() => {
@@ -554,7 +442,7 @@ export default function Portfolio() {
               
               {/* Desktop Filter Pills - Hidden on mobile/tablet */}
               <div className="hidden lg:flex flex-wrap gap-2">
-                {categories.map((category, index) => {
+                {makeCategories(services, projects).map((category, index) => {
                   const Icon = category.icon
                   return (
                     <button
@@ -589,7 +477,7 @@ export default function Portfolio() {
                 >
                   <div className="flex items-center gap-3">
                     {(() => {
-                      const activeFilter = categories.find(c => c.value === activeCategory)
+                      const activeFilter = makeCategories(services, projects).find(c => c.value === activeCategory)
                       const Icon = activeFilter?.icon || Grid3X3
                       return (
                         <>
@@ -621,7 +509,7 @@ export default function Portfolio() {
                     
                     {/* Filter Options */}
                     <div className="p-2">
-                      {categories.map((category, index) => {
+                      {makeCategories(services, projects).map((category, index) => {
                         const Icon = category.icon
                         return (
                           <button
@@ -691,41 +579,46 @@ export default function Portfolio() {
               ? 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3' 
               : 'grid-cols-1 max-w-4xl mx-auto'
           }`}>
-            {filteredProjects.map((project, idx) => (
+      {filteredProjects.map((project, idx) => (
               <div
-                key={project.id}
+        key={project.slug}
                 ref={el => { cardsRef.current[idx] = el }}
                 className={`group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 overflow-hidden ${
                   viewMode === 'list' ? 'flex flex-col sm:flex-row' : ''
                 } ${project.featured ? 'ring-2 ring-blue-500/20' : ''}`}
               >
-                {/* Featured Badge */}
-                {project.featured && (
-                  <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                    <Star className="w-3 h-3 fill-current" />
-                    Featured
+                {/* Status Badge */}
+                {project.status && (
+                  <div className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-medium ${
+                    project.status === 'Live' 
+                      ? 'bg-green-100 text-green-800' 
+                      : project.status === 'Beta'
+                      ? 'bg-blue-100 text-blue-800'
+                      : 'bg-yellow-100 text-yellow-800'
+                  }`}>
+                    {project.status}
                   </div>
                 )}
-
-                {/* Status Badge */}
-                <div className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-medium ${
-                  project.status === 'Live' 
-                    ? 'bg-green-100 text-green-800' 
-                    : project.status === 'Beta'
-                    ? 'bg-blue-100 text-blue-800'
-                    : 'bg-yellow-100 text-yellow-800'
-                }`}>
-                  {project.status}
-                </div>
 
                 {/* Project Image */}
                 <div className={`relative overflow-hidden ${
                   viewMode === 'list' ? 'sm:w-80 flex-shrink-0' : ''
                 }`}>
                   <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 relative group-hover:scale-105 transition-transform duration-500">
+                    {/* Featured Badge */}
+                    {project.featured && (
+                      <div className="absolute top-4 left-4 z-20">
+                        <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-3 py-1 text-xs font-semibold text-white shadow-lg shadow-purple-500/30 border border-white/20">
+                          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
+                            <Star className="h-3.5 w-3.5" />
+                          </span>
+                          Featured
+                        </div>
+                      </div>
+                    )}
                     {/* Full Banner Image */}
                     <Image 
-                      src={project.image} 
+                      src={project.imageUrl || '/projects/algoease.png'} 
                       alt={project.title} 
                       fill
                       className="object-cover"
@@ -735,35 +628,36 @@ export default function Portfolio() {
                     {/* Overlay for better text readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-black/20"></div>
                     
-                    {/* Tech Stack Icons - Bottom Left */}
-                    <div className="absolute bottom-4 left-4 flex gap-2 z-10">
-                      {project.techImages.slice(0, 3).map((img, i) => (
-                        <div key={i} className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-lg p-1.5 shadow-lg">
-                          <Image 
-                            src={img} 
-                            alt="" 
-                            width={20} 
-                            height={20} 
-                            className="rounded-sm object-cover"
-                          />
-                        </div>
-                      ))}
-                      {project.techImages.length > 3 && (
-                        <div className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg">
-                          <span className="text-xs font-medium text-gray-600">+{project.techImages.length - 3}</span>
-                        </div>
-                      )}
+                    {/* Tech logos over banner (fallback to service names if none) */}
+                    <div className="absolute bottom-4 left-4 flex gap-2 z-10 flex-wrap">
+                      {(project.techImages && project.techImages.length > 0)
+                        ? project.techImages.slice(0, 4).map((url, i) => (
+                            url ? (
+                              <div key={i} className="h-8 w-8 rounded-md overflow-hidden bg-white/90 backdrop-blur-sm border border-white/60 shadow">
+                                <Image src={url} alt="tech" width={32} height={32} className="h-full w-full object-cover" />
+                              </div>
+                            ) : null
+                          ))
+                        : project.serviceSlugs.slice(0, 3).map((slug) => {
+                            const s = services.find(x => x.slug === slug)
+                            if (!s) return null
+                            return (
+                              <span key={slug} className="px-2 py-1 rounded-md text-xs font-medium bg-white/90 backdrop-blur-sm shadow">
+                                {s.name}
+                              </span>
+                            )
+                          })
+                      }
                     </div>
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                       <div className="flex gap-3">
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors shadow-lg">
-                          <ExternalLink className="w-5 h-5" />
-                        </a>
-                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors shadow-lg">
-                          <Play className="w-5 h-5" />
-                        </a>
+                        {project.links?.map(link => (
+                          <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors shadow-lg">
+                            <ExternalLink className="w-5 h-5" />
+                          </a>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -771,26 +665,12 @@ export default function Portfolio() {
 
                 {/* Project Content */}
                 <div className="p-6 sm:p-8 flex-1">
-                  {/* Project Header */}
+          {/* Project Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {project.title}
                       </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {project.duration}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Users className="w-4 h-4" />
-                          {project.team}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          {project.rating}
-                        </div>
-                      </div>
                     </div>
                   </div>
 
@@ -799,26 +679,31 @@ export default function Portfolio() {
                     {project.description}
                   </p>
 
-                  {/* Tech Stack */}
+                  {/* Service Tags */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={tech}
-                        ref={el => {
-                          if (!badgeRefs.current[idx]) badgeRefs.current[idx] = []
-                          badgeRefs.current[idx][i] = el
-                        }}
-                        className="px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-100 hover:border-blue-200 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {project.serviceSlugs.map((slug, i) => {
+                      const s = services.find(x => x.slug === slug)
+                      if (!s) return null
+                      return (
+                        <span
+                          key={slug}
+                          ref={el => {
+                            if (!badgeRefs.current[idx]) badgeRefs.current[idx] = []
+                            badgeRefs.current[idx][i] = el
+                          }}
+                          className="px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-100 hover:border-blue-200 transition-colors"
+                        >
+                          {s.name}
+                        </span>
+                      )
+                    })}
                   </div>
+                  {/* Meta info removed per request */}
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
                     <a 
-                      href={project.url}
+                      href={project.links?.[0]?.url || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2.5 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
@@ -833,7 +718,10 @@ export default function Portfolio() {
           </div>
 
           {/* Load More Button (if needed) */}
-          {filteredProjects.length === 0 && (
+          {loading && (
+            <div className="text-center py-16 text-sm text-gray-500">Loading projects…</div>
+          )}
+          {!loading && filteredProjects.length === 0 && (
             <div className="text-center py-16">
               <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Briefcase className="w-12 h-12 text-gray-400" />
@@ -841,6 +729,9 @@ export default function Portfolio() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No Projects Found</h3>
               <p className="text-gray-600">Try selecting a different category to see more projects.</p>
             </div>
+          )}
+          {error && (
+            <div className="text-center py-8 text-sm text-red-500">{error}</div>
           )}
         </div>
       </section>

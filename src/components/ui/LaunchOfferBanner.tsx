@@ -1,11 +1,15 @@
 'use client'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { X, Gift, Clock } from 'lucide-react'
 
 export default function LaunchOfferBanner() {
+  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(true)
 
   if (!isVisible) return null
+  // Auto-hide on admin routes
+  if (pathname?.startsWith('/admin')) return null
 
   return (
     <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 overflow-hidden">

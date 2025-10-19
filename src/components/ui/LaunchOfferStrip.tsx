@@ -1,12 +1,15 @@
 'use client'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { X, Gift, Clock, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function LaunchOfferStrip() {
+  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(true)
 
   if (!isVisible) return null
+  if (pathname?.startsWith('/admin')) return null
 
   return (
     <div className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-blue-600 to-purple-600 text-white border-b border-blue-700/20 overflow-hidden">
