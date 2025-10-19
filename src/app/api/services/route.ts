@@ -17,6 +17,7 @@ export async function GET() {
     ]).toArray()
     return NextResponse.json({ ok: true, data: list })
   } catch (err) {
+    console.error('GET /api/services error:', err)
     const message = err instanceof Error ? err.message : 'Failed to fetch services'
     return NextResponse.json({ ok: false, error: message }, { status: 500 })
   }
@@ -47,6 +48,7 @@ export async function POST(req: Request) {
     if (dup?.code === 11000) {
       return NextResponse.json({ ok: false, error: 'Service slug already exists' }, { status: 409 })
     }
+    console.error('POST /api/services error:', err)
     const message = err instanceof Error ? err.message : 'Failed to create service'
     return NextResponse.json({ ok: false, error: message }, { status: 500 })
   }

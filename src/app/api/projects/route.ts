@@ -3,6 +3,7 @@ import { projectsCollection, servicesCollection, type ProjectDoc } from '@/lib/d
 import { isAdminRequest } from '@/lib/auth/admin'
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 export async function GET(req: Request) {
   try {
@@ -21,6 +22,7 @@ export async function GET(req: Request) {
       .toArray() as unknown as ProjectDoc[]
     return NextResponse.json({ ok: true, data: list })
   } catch (err) {
+    console.error('GET /api/projects error:', err)
     const message = err instanceof Error ? err.message : 'Failed to fetch projects'
     return NextResponse.json({ ok: false, error: message }, { status: 500 })
   }
@@ -55,6 +57,7 @@ export async function POST(req: Request) {
     if (dup?.code === 11000) {
       return NextResponse.json({ ok: false, error: 'Project slug already exists' }, { status: 409 })
     }
+    console.error('POST /api/projects error:', err)
     const message = err instanceof Error ? err.message : 'Failed to create project'
     return NextResponse.json({ ok: false, error: message }, { status: 500 })
   }

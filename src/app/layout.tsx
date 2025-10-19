@@ -17,8 +17,10 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.webasthetic.in'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://webaesthetic.vercel.app'),
+  metadataBase: new URL(siteUrl),
   title: "Webasthetic - Premium Web Development Agency",
   description: "Transform your digital presence with custom web solutions, modern designs, and cutting-edge development from Webasthetic agency.",
   keywords: ["web development", "web design", "react development", "next.js", "custom websites", "digital agency"],
